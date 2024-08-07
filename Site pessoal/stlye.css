@@ -63,9 +63,7 @@ div.Ala-Eu {
     display: grid;
     align-items: start;
     padding: 20px;
-
 }
-
 
 div.sobre-mim {
     color: #fff;
@@ -104,7 +102,8 @@ div.texto-sobre {
 .caixas-extras {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    padding-top: 50px ;
+    gap: 50px;
 }
 
 .Imagem-habilidade,.Imagem-habilidade-extra {
@@ -138,7 +137,7 @@ div.texto-sobre {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
     text-align: center;
     display: none;
@@ -224,7 +223,7 @@ button.next {
 }
 
 /* Media Queries */
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     .container {
         grid-template-columns: 1fr;
         margin: 20px;
@@ -243,10 +242,18 @@ button.next {
     .habilidades .caixas {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .habilidades .caixas-extras {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 600px) {
     .habilidades .caixas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .habilidades .caixas-extras {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -255,17 +262,21 @@ button.next {
     }
 
     .slide-image {
-        width: 150px;
+        width: 100px;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     .habilidades .caixas {
         grid-template-columns: 1fr;
     }
 
+    .habilidades .caixas-extras {
+        grid-template-columns: 1fr;
+    }
+
     .Imagem-habilidade {
-        width: 100%;
+        width: 150px;
         height: auto;
     }
 
@@ -281,5 +292,18 @@ button.next {
         font-size: 1rem;
         width: 40px;
         height: 40px;
+    }
+}
+
+/* Mostrar o texto quando a habilidade é clicada */
+.Imagem-habilidade-extra:active .texto-habilidade-extra,
+.Imagem-habilidade-extra:focus .texto-habilidade-extra,
+.Imagem-habilidade-extra:hover .texto-habilidade-extra {
+    display: flex;
+}
+
+@media (max-width: 575px) {
+    .Imagem-habilidade-extra .texto-habilidade-extra {
+        display: flex;
     }
 }

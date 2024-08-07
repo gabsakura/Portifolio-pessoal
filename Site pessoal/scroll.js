@@ -1,27 +1,45 @@
 window.sr = ScrollReveal({ reset: true });
 
-sr.reveal('.Ala-Eu', {
+ScrollReveal().reveal('.apresentação-grande', {
+    delay: 300,
     duration: 1000,
-    distance: '100px',
-    origin: 'top'
+    origin: 'left',
+    distance: '50px'
 });
 
-sr.reveal('.projetos', {
+ScrollReveal().reveal('.circle', {
+    delay: 300,
     duration: 1000,
-    distance: '100px',
-    origin: 'top'
+    origin: 'bottom',
+    distance: '50px'
 });
 
-sr.reveal('.projetos', {
+ScrollReveal().reveal('.imagens-redes', {
+    delay: 500,
     duration: 1000,
-    distance: '100px',
-    origin: 'top'
+    origin: 'right',
+    distance: '50px'
 });
 
-sr.reveal('.projetos', {
+ScrollReveal().reveal('.sobre-mim', {
+    delay: 500,
     duration: 1000,
-    distance: '100px',
-    origin: 'top'
+    origin: 'bottom',
+    distance: '50px'
+});
+
+ScrollReveal().reveal('.habilidades', {
+    delay: 500,
+    duration: 1000,
+    origin: 'top',
+    distance: '50px'
+});
+
+ScrollReveal().reveal('.projetos', {
+    delay: 500,
+    duration: 1000,
+    origin: 'bottom',
+    distance: '50px'
 });
 
 var menuItem = document.querySelectorAll('.item-menu');

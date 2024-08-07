@@ -94,17 +94,21 @@ function removeBlur() {
 function showFramework(skill) {
     const frameworks = {
         'CSS': [
-            { src: 'img/Bootstrap.png', text: 'Usei minhas habilidades em Bootstrap para criar layouts responsivos e consistentes rapidamente.' }
+            { src: 'img/Bootstrap.svg', text: 'Usei minhas habilidades em Bootstrap para criar layouts responsivos e consistentes rapidamente.' },
+            { src:'img/Tailwindcss.svg', text: 'Uso meus conhecimentos em tailwindcss para a personalização e embelezamento do projeto.'}
         ],
         'JavaScript': [
             { src: 'img/React.png', text: 'Usei minhas habilidades em React para construir interfaces de usuário dinâmicas e componentes reutilizáveis.' },
-            { src: 'img/JWT.png', text:'Useo minhas habilidades em JWT para garantir a segurança e não vazamento de dados sigilosos'}         
+            { src: 'img/JWT.svg', text:'Uso minhas habilidades em JWT para garantir a segurança e não vazamento de dados sigilosos.'}   ,      
+            { src: 'img/Vite.svg', text:' Uso meus conhecimentos em vite para o teste de minhas aplicações web.'}
         ], 
         'Python': [
-            { src: 'img/Django.png', text: 'Usei minhas habilidades em Django para desenvolver backends robustos e eficientes.' }
+            { src: 'img/Django.svg', text: 'Usei minhas habilidades em Django para desenvolver backends robustos e eficientes.' },
+            { src:'img/DjangoSQL.svg', text:'Uso minha habilidades em DjangoSQl para desenvolver banco de dados eficientes e faceis de se ler e acessar.'}
         ],
         '+':[
-            {src:'img/SQL.png', text:'Usei minhas habilidades em SQL para criar bancos de dados interativos e faceis para se interagir com as aplicações'},
+            {src:'img/SQL.svg', text:'Usei minhas habilidades em SQL para criar bancos de dados interativos e faceis para se interagir com as aplicações'},
+            {src:'img/DevOps.png', text:'Uso meus conhecimentos em DevOps como o Git e o Docker para facilitar desenvolvimento e controle de versão do codigo e o docker para facilitação ao deploy'}
         ]
     };
 
@@ -144,5 +148,15 @@ document.addEventListener("DOMContentLoaded", function() {
     habilidadesExtras.forEach(habilidadeExtra => {
         const text = habilidadeExtra.querySelector('.texto-habilidade-extra');
         text.style.display = "none";
+    });
+});
+document.querySelectorAll('.Imagem-habilidade-extra').forEach(item => {
+    item.addEventListener('click', () => {
+        const text = item.querySelector('.texto-habilidade-extra');
+        if (text.style.display === 'flex') {
+            text.style.display = 'none';
+        } else {
+            text.style.display = 'flex';
+        }
     });
 });
