@@ -1,23 +1,3 @@
-var menuItem = document.querySelectorAll('.item-menu')
-
-function selectlink(){
-    menuItem.forEach((item)=>
-    item.classList.remove('ativo')
-    )
-    this.classList.add('ativo')
-}
-
-menuItem.forEach((item)=>
-    item.addEventListener('click',selectlink)
-)
-//menu
-
-var btnExp = document.querySelector('#btn-exp')
-var menuSide = document.querySelector('.menu-lateral')
-
-btnExp.addEventListener('click', function(){
-    menuSide.classList.toggle('expandir')
-})
 
 //slider
 
@@ -77,17 +57,75 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(() => moveSlide(1), 3000); // Adjust the interval as needed
 });
 
-function toggleText(element) {
+function toggleText(element, skill) {
     const img = element.querySelector('img');
     const text = element.querySelector('.texto-habilidade');
+    const frameworksContainer = document.getElementById('frameworks-container');
 
     if (img.style.display === "none") {
         img.style.display = "block";
         text.style.display = "none";
+        removeBlur();
+        frameworksContainer.innerHTML = '';  // Limpa os frameworks exibidos
     } else {
         img.style.display = "none";
         text.style.display = "flex";
+        applyBlur(element);
+        showFramework(skill);
     }
+}
+
+function applyBlur(activeElement) {
+    const allElements = document.querySelectorAll('.Imagem-habilidade');
+    allElements.forEach(element => {
+        if (element !== activeElement) {
+            element.classList.add('blur');
+        }
+    });
+}
+
+function removeBlur() {
+    const allElements = document.querySelectorAll('.Imagem-habilidade');
+    allElements.forEach(element => {
+        element.classList.remove('blur');
+    });
+}
+
+function showFramework(skill) {
+    const frameworks = {
+        'CSS': [
+            { src: 'img/Bootstrap.png', text: 'Usei minhas habilidades em Bootstrap para criar layouts responsivos e consistentes rapidamente.' }
+        ],
+        'JavaScript': [
+            { src: 'img/React.png', text: 'Usei minhas habilidades em React para construir interfaces de usuário dinâmicas e componentes reutilizáveis.' },
+            { src: 'img/JWT.png', text:'Useo minhas habilidades em JWT para garantir a segurança e não vazamento de dados sigilosos'}         
+        ], 
+        'Python': [
+            { src: 'img/Django.png', text: 'Usei minhas habilidades em Django para desenvolver backends robustos e eficientes.' }
+        ],
+        '+':[
+            {src:'img/SQL.png', text:'Usei minhas habilidades em SQL para criar bancos de dados interativos e faceis para se interagir com as aplicações'},
+        ]
+    };
+
+    const frameworksContainer = document.getElementById('frameworks-container');
+    frameworksContainer.innerHTML = '';  // Limpa os frameworks exibidos
+
+    frameworks[skill].forEach(framework => {
+        const frameworkElement = document.createElement('div');
+        frameworkElement.className = 'Imagem-habilidade-extra';
+        frameworkElement.innerHTML = `
+            <img src="${framework.src}" alt="Framework ${skill}">
+            <p class="texto-habilidade-extra">${framework.text}</p>
+        `;
+        frameworkElement.onclick = () => toggleExtraText(frameworkElement);
+        frameworksContainer.appendChild(frameworkElement);
+    });
+}
+
+function toggleExtraText(element) {
+    const text = element.querySelector('.texto-habilidade-extra');
+    text.style.display = text.style.display === "none" ? "flex" : "none";
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -97,8 +135,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const img = habilidade.querySelector('img');
         const text = habilidade.querySelector('.texto-habilidade');
 
-        // Garantir que a imagem seja exibida inicialmente e o texto esteja oculto
         img.style.display = "block";
+        text.style.display = "none";
+    });
+
+    const habilidadesExtras = document.querySelectorAll(".Imagem-habilidade-extra");
+
+    habilidadesExtras.forEach(habilidadeExtra => {
+        const text = habilidadeExtra.querySelector('.texto-habilidade-extra');
         text.style.display = "none";
     });
 });
