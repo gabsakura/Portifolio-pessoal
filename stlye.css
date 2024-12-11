@@ -1,0 +1,805 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif; 
+}
+body, html {
+    background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(20, 2, 48));
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container principal - nova estrutura */
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Ajustes específicos para cada seção */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 50px;
+}
+
+/* Container principal do conteúdo */
+.hero-content {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    max-width: 1200px;
+}
+
+/* Container do lado esquerdo (nome e especialidade) */
+.left-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+/* Container do lado direito (imagem e redes) */
+.right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Ajustes no container do nome e especialidade */
+.apresentação-grande {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.apresentação-grande h1 {
+    font-size: 4em;
+    color: rgb(0, 255, 170);
+    margin: 0;
+}
+
+.apresentação-grande h3 {
+    font-size: 2.5em;
+    color: rgb(0, 255, 170);
+    margin: 0;
+}
+
+/* Container da imagem */
+.circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: radial-gradient(circle, rgba(153, 7, 7, 0.979) 0%, rgb(255, 255, 255) 60%, rgba(233, 7, 7, 0.952) 100%);
+    animation: pulse 3s infinite linear;
+}
+
+/* Ajustes nas redes sociais */
+.imagens-redes {
+    display: flex;
+    gap: 40px;
+    font-size: 32px;
+}
+
+.imagens-redes a {
+    color: rgb(0, 255, 170);
+    transition: color 0.3s ease;
+}
+
+.imagens-redes a:hover {
+    color: white;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 20px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .left-content {
+        align-items: center;
+        gap: 20px;
+    }
+
+    .apresentação-grande {
+        align-items: center;
+    }
+
+    .circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .imagens-redes {
+        font-size: 24px;
+    }
+}
+
+.about-section {
+    background: rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.skills-section {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 50px 20px;
+}
+
+.projects-section {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Ajuste do scroll horizontal suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1000px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .apresentação-grande {
+        text-align: center;
+    }
+}
+
+.apresentação-grande {
+    display: contents;
+}
+
+.apresentação-grande h1 {
+    grid-area: nome;
+    font-size: 4em;
+    color: rgb(0, 255, 170);
+    margin: 0;
+    text-align: right;
+    padding-right: 50px;
+}
+
+.apresentação-grande h3 {
+    grid-area: especialidade;
+    font-size: 2.5em;
+    color: rgb(0, 255, 170);
+    margin: 0;
+    text-align: right;
+    padding-right: 50px;
+}
+
+.circle {
+    grid-area: imagem;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: radial-gradient(circle, rgba(153, 7, 7, 0.979) 0%, rgb(255, 255, 255) 60%, rgba(233, 7, 7, 0.952) 100%);
+    animation: pulse 3s infinite linear;
+    justify-self: start;
+}
+
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imagens-redes {
+    grid-area: redes;
+    display: flex;
+    gap: 40px;
+    font-size: 32px;
+    justify-self: start;
+}
+
+.imagens-redes a {
+    color: rgb(0, 255, 170);
+    transition: color 0.3s ease;
+}
+
+.imagens-redes a:hover {
+    color: white;
+}
+
+div.Ala-Eu {
+    height: 100vh;
+    display: grid;
+    align-items: start;
+    padding: 20px;
+}
+
+div.sobre-mim {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+div.texto-sobre {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sobre-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.habilidades {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+.caixas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    justify-items: center;
+}
+
+.frase-domino {
+    font-size: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.caixas-extras {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 50px ;
+    gap: 50px;
+}
+
+.Imagem-habilidade,.Imagem-habilidade-extra {
+    position: relative;
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.Imagem-habilidade img,.Imagem-habilidade-extra img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.Imagem-habilidade:hover,.Imagem-habilidade-extra:hover {
+    box-shadow: 0 0 10px 5px purple;
+}
+
+.texto-habilidade,.texto-habilidade-extra {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    display: none;
+    font-size: 13px;
+}
+
+.blur {
+    display: none;
+}
+
+/* Seção "Projetos" */
+.projetos {
+    overflow: hidden;
+    position: relative;
+    margin: 0 30px;
+    padding-top: 50px;
+    align-items: center;
+}
+
+.slide {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.dentro-slide {
+    overflow: hidden;
+}
+
+.lista-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 50px;
+}
+
+.conteudo-slide {
+    box-sizing: border-box;
+    position: relative;
+    margin: 20px 50px;
+}
+
+.slide-image {
+    height: auto;
+    display: block;
+}
+
+.descricao-slide {
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+button.prev {
+    left: 0;
+}
+
+button.next {
+    right: 0;
+}
+
+/* Media Queries */
+@media (max-width: 1000px) {
+    .container {
+        grid-template-columns: 1fr;
+        margin: 20px;
+    }
+
+    div.apresentação-grande {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .habilidades .caixas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .habilidades .caixas-extras {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .habilidades .caixas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .habilidades .caixas-extras {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .texto-habilidade {
+        font-size: 11px;
+    }
+
+    .slide-image {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .habilidades .caixas {
+        grid-template-columns: 1fr;
+    }
+
+    .habilidades .caixas-extras {
+        grid-template-columns: 1fr;
+    }
+
+    .Imagem-habilidade {
+        width: 150px;
+        height: auto;
+    }
+
+    .slide-image {
+        width: 100px;
+    }
+
+    .projetos {
+        padding-top: 30px;
+    }
+
+    button {
+        font-size: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Mostrar o texto quando a habilidade é clicada */
+.Imagem-habilidade-extra:active .texto-habilidade-extra,
+.Imagem-habilidade-extra:focus .texto-habilidade-extra,
+.Imagem-habilidade-extra:hover .texto-habilidade-extra {
+    display: flex;
+}
+
+@media (max-width: 575px) {
+    .Imagem-habilidade-extra .texto-habilidade-extra {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .sobre-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-section {
+        grid-template-areas: 
+            "nome"
+            "especialidade"
+            "imagem"
+            "redes";
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        gap: 40px;
+        padding: 20px;
+        place-items: center;
+    }
+
+    .apresentação-grande h1,
+    .apresentação-grande h3 {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .circle {
+        width: 200px;
+        height: 200px;
+        justify-self: center;
+    }
+
+    .imagens-redes {
+        justify-self: center;
+        font-size: 24px;
+    }
+}
+
+/* Ajustes nas cores do texto da seção sobre */
+.sobre-mim h1 {
+    color: rgb(0, 255, 170);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sobre-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.sobre-section i {
+    color: rgb(0, 255, 170);
+    font-size: 24px;
+}
+
+.sobre-content h3 {
+    color: rgb(0, 255, 170);
+    margin-bottom: 10px;
+}
+
+.sobre-content p {
+    color: white;
+    line-height: 1.6;
+}
+
+/* Ajuste responsivo mantendo as cores */
+@media (max-width: 768px) {
+    .sobre-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Ajustes na seção de habilidades */
+.skills-section {
+    padding: 50px 20px;
+}
+
+.caixas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    justify-items: center;
+}
+
+.Imagem-habilidade {
+    position: relative;
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.Imagem-habilidade img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.Imagem-habilidade:hover img {
+    transform: scale(1.1);
+}
+
+.texto-habilidade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.texto-habilidade h3 {
+    color: rgb(0, 255, 170);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list li {
+    color: white;
+    margin: 8px 0;
+    font-size: 0.9em;
+}
+
+/* Responsivo */
+@media (max-width: 1200px) {
+    .caixas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .caixas {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .Imagem-habilidade {
+        width: 150px;
+        height: 150px;
+    }
+
+    .texto-habilidade h3 {
+        font-size: 1.2em;
+    }
+
+    .skills-list li {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .caixas {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ajustes nas habilidades */
+.skill-item {
+    position: relative;
+    padding: 8px;
+    margin: 5px 0;
+    cursor: pointer;
+    color: rgb(0, 255, 170);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background: rgba(0, 255, 170, 0.1);
+    border-radius: 5px;
+}
+
+.skill-description {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    width: 200px;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 10px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajuste responsivo para a descrição em telas menores */
+@media (max-width: 768px) {
+    .skill-description {
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
+/* Container das sub-habilidades */
+.sub-skills-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.sub-skills-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo para cada sub-habilidade */
+.sub-skill {
+    background: rgba(0, 255, 170, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.sub-skill:hover {
+    background: rgba(0, 255, 170, 0.1);
+    transform: translateY(-5px);
+}
+
+.sub-skill-icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.sub-skill-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sub-skill-info {
+    flex: 1;
+}
+
+.sub-skill-info h4 {
+    color: rgb(0, 255, 170);
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.sub-skill-info p {
+    color: white;
+    font-size: 0.9em;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+/* Estilo para habilidade ativa */
+.Imagem-habilidade.active {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.3);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .sub-skills-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .sub-skill {
+        padding: 15px;
+    }
+}
