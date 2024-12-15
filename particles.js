@@ -1,7 +1,7 @@
 particlesJS('particles-js', {
     particles: {
         number: {
-            value: 80,
+            value: 60,
             density: {
                 enable: true,
                 value_area: 800
@@ -13,6 +13,17 @@ particlesJS('particles-js', {
         shape: {
             type: 'circle'
         },
-        // Mais configurações...
+        opacity: {
+            value: 0.5,
+            random: false
+        },
+        size: {
+            value: 3,
+            random: true
+        },
+        move: {
+            enable: true,
+            speed: 2
+        }
     }
 }); 

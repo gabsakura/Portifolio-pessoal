@@ -1,7 +1,4 @@
-
-//slider
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
     const slider = document.querySelector('.lista-slide');
     const slides = Array.from(document.querySelectorAll('.conteudo-slide'));
     const totalSlides = slides.length;
@@ -54,7 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.next').addEventListener('click', () => moveSlide(1));
 
     // Auto slide
-    setInterval(() => moveSlide(1), 3000); // Adjust the interval as needed
+    setInterval(() => moveSlide(1), 5000); // Adjust the interval as needed
+
+    // Inicialização das habilidades
+    const habilidades = document.querySelectorAll(".Imagem-habilidade");
+    habilidades.forEach(habilidade => {
+        const img = habilidade.querySelector('img');
+        const text = habilidade.querySelector('.texto-habilidade');
+        img.style.display = "block";
+        text.style.display = "none";
+    });
 });
 
 function toggleText(element, skill) {
