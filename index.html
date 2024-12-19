@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="stlye.css">
     <link rel="stylesheet" href="slider.css">
     <script src="https://kit.fontawesome.com/981a566169.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
     <div class="main-container">
@@ -17,7 +18,7 @@
                 <div class="left-content">
                     <div class="apresentação-grande">
                         <h1>Gabriel Sakura</h1>
-                        <h3>Back-End Developer</h3>
+                        <h3>Full-Stack Developer</h3>
                     </div>
                 </div>
                 <div class="right-content">
@@ -101,6 +102,10 @@
                         <img src="img/Python.png" alt="Python">
                         <div class="texto-habilidade"></div>
                     </div>
+                    <div class="Imagem-habilidade" onclick="toggleText(this, 'Database')">
+                        <img src="img/SQL.svg" alt="Database">
+                        <div class="texto-habilidade"></div>
+                    </div>
                     <div class="Imagem-habilidade" onclick="toggleText(this, 'DevOps')">
                         <img src="img/devops.png" alt="DevOps">
                         <div class="texto-habilidade"></div>
@@ -117,11 +122,11 @@
         <section id="projects" class="projects-section">
             <div class="section-content parallax" data-speed="0.2">
                 <h2>Meus Projetos</h2>
-                <div class="slide">
-                    <div class="dentro-slide">
-                        <div class="lista-slide">
-                            <div class="conteudo-slide">
-                                <img class="slide-image" src="./img/projeto em andamento.jfif" alt="Portfolio">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="https://gabsakura.github.io/Portifolio-pessoal/" target="_blank" rel="noopener noreferrer" class="projeto-link">
+                                <img class="slide-image" src="img\DEV.png" alt="Portfolio">
                                 <div class="descrição-slide">
                                     <h3>Projeto Portfolio</h3>
                                     <p>Site pessoal desenvolvido com HTML, CSS e JavaScript puro, focando em performance e experiência do usuário.</p>
@@ -130,29 +135,137 @@
                                         <span class="tag">CSS</span>
                                         <span class="tag">JavaScript</span>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="conteudo-slide">
-                                <img class="slide-image" src="./img/projeto em andamento.jfif" alt="Sistema de Gestão">
-                                <div class="descrição-slide">
-                                    <h3>Sistema de Gestão</h3>
-                                    <p>Aplicação web para gerenciamento de recursos e processos empresariais.</p>
-                                    <div class="projeto-tags">
-                                        <span class="tag">Python</span>
-                                        <span class="tag">Django</span>
-                                        <span class="tag">PostgreSQL</span>
+                                    <div class="projeto-links">
+                                        <a href="https://github.com/gabsakura/Portifolio-pessoal" target="_blank" rel="noopener noreferrer" class="github-link">
+                                            <i class="bi bi-github"></i>
+                                            <span>Ver código</span>
+                                        </a>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="https://sensor-app-9nxc.onrender.com/" target="_blank" rel="noopener noreferrer" class="projeto-link">
+                                <img class="slide-image" src="img\Failguard.png" alt="Sistema de Gestão de Sensores">
+                                <div class="descrição-slide">
+                                    <h3>Sistema de Gestão de Sensores</h3>
+                                    <p>Aplicação web para gerenciamento de recursos e processos industriais com uso de chatbot.</p>
+                                    <div class="projeto-tags">
+                                        <span class="tag">Python</span>
+                                        <span class="tag">Flask</span>  
+                                        <span class="tag">SQLite3</span>
+                                        <span class="tag">JavaScript</span>
+                                    </div>
+                                    <div class="projeto-links">
+                                        <a href="https://github.com/gabsakura/IA-challenge-update_test-main" target="_blank" rel="noopener noreferrer" class="github-link">
+                                            <i class="bi bi-github"></i>
+                                            <span>Ver código</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="https://api-rest.com" target="_blank" rel="noopener noreferrer" class="projeto-link">
+                                <img class="slide-image" src="./img/projeto em andamento.jfif" alt="API REST">
+                                <div class="descrição-slide">
+                                    <h3>API REST</h3>
+                                    <p>API RESTful para integração de sistemas e gerenciamento de dados.</p>
+                                    <div class="projeto-tags">
+                                        <span class="tag">Node.js</span>
+                                        <span class="tag">Express</span>
+                                        <span class="tag">MongoDB</span>
+                                    </div>
+                                    <div class="projeto-links">
+                                        <a href="https://github.com/gabsakura/Projeto_siteProfissional.git" target="_blank" rel="noopener noreferrer" class="github-link">
+                                            <i class="bi bi-github"></i>
+                                            <span>Ver código</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="https://seu-ecommerce.com" target="_blank" rel="noopener noreferrer" class="projeto-link">
+                                <img class="slide-image" src="./img/projeto em andamento.jfif" alt="E-commerce">
+                                <div class="descrição-slide">
+                                    <h3>E-commerce</h3>
+                                    <p>Plataforma completa de e-commerce com sistema de pagamentos integrado.</p>
+                                    <div class="projeto-tags">
+                                        <span class="tag">React</span>
+                                        <span class="tag">Node.js</span>
+                                        <span class="tag">Stripe</span>
+                                    </div>
+                                    <div class="projeto-links">
+                                        <a href="https://github.com/seu-usuario/ecommerce" target="_blank" rel="noopener noreferrer" class="github-link">
+                                            <i class="bi bi-github"></i>
+                                            <span>Ver código</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="https://dashboard-analytics.com" target="_blank" rel="noopener noreferrer" class="projeto-link">
+                                <img class="slide-image" src="./img/projeto em andamento.jfif" alt="Dashboard">
+                                <div class="descrição-slide">
+                                    <h3>Dashboard Analytics</h3>
+                                    <p>Dashboard interativo para visualização de dados e métricas em tempo real.</p>
+                                    <div class="projeto-tags">
+                                        <span class="tag">Vue.js</span>
+                                        <span class="tag">D3.js</span>
+                                        <span class="tag">Firebase</span>
+                                    </div>
+                                    <div class="projeto-links">
+                                        <a href="https://github.com/seu-usuario/dashboard" target="_blank" rel="noopener noreferrer" class="github-link">
+                                            <i class="bi bi-github"></i>
+                                            <span>Ver código</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </section>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        // Configuração base do ScrollReveal
+        ScrollReveal({
+            reset: true,
+            distance: '50px',
+            duration: 1000,
+            delay: 200
+        });
+
+        // Revelar seções específicas
+        ScrollReveal().reveal('.hero-section', { origin: 'left' });
+        ScrollReveal().reveal('.sobre-section', { origin: 'bottom' });
+        ScrollReveal().reveal('.skills-section', { origin: 'right' });
+        ScrollReveal().reveal('.projects-section', { origin: 'bottom' });
+        
+        // Revelar elementos dentro das seções
+        ScrollReveal().reveal('.Imagem-habilidade', { 
+            origin: 'bottom',
+            interval: 200 
+        });
+        ScrollReveal().reveal('.conteudo-slide', { 
+            origin: 'right',
+            interval: 300 
+        });
+        ScrollReveal().reveal('.sobre-content', { 
+            origin: 'left',
+            interval: 200 
+        });
+    </script>
 </body>
 </html>
+0

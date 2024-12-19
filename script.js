@@ -1,83 +1,100 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.querySelector('.lista-slide');
-    const slides = Array.from(document.querySelectorAll('.conteudo-slide'));
-    const totalSlides = slides.length;
-    let currentIndex = 0;
+    initializeSwiper();
+    initializeSkills();
+});
 
-    // Clone first and last slides
-    const firstClone = slides[0].cloneNode(true);
-    const lastClone = slides[totalSlides - 1].cloneNode(true);
-
-    // Add clones to the slider
-    slider.appendChild(firstClone);
-    slider.insertBefore(lastClone, slides[0]);
-
-    const slideWidth = slides[0].clientWidth + 50; // Adjust width for gap
-
-    // Set initial position
-    slider.style.transform = `translateX(-${slideWidth}px)`;
-
-    function moveSlide(direction) {
-        if (direction === 1) {
-            currentIndex++;
-            if (currentIndex >= totalSlides + 1) {
-                currentIndex = 1;
-                slider.style.transition = 'none';
-                slider.style.transform = `translateX(-${slideWidth}px)`;
-                setTimeout(() => {
-                    slider.style.transition = 'transform 0.5s ease-in-out';
-                    slider.style.transform = `translateX(-${slideWidth * (currentIndex + 1)}px)`;
-                }, 50);
-                return;
-            }
-        } else if (direction === -1) {
-            currentIndex--;
-            if (currentIndex <= -1) {
-                currentIndex = totalSlides - 1;
-                slider.style.transition = 'none';
-                slider.style.transform = `translateX(-${slideWidth * (totalSlides + 1)}px)`;
-                setTimeout(() => {
-                    slider.style.transition = 'transform 0.5s ease-in-out';
-                    slider.style.transform = `translateX(-${slideWidth * (totalSlides)}px)`;
-                }, 50);
-                return;
+function initializeSwiper() {
+    const swiper = new Swiper('.swiper', {
+        loop: true,
+        speed: 800,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        effect: 'coverflow',
+        coverflowEffect: {
+            rotate: 0,
+            stretch: -50,
+            depth: 100,
+            modifier: 2,
+            slideShadows: false,
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            640: {
+                slidesPerView: 'auto',
+                spaceBetween: 60
             }
         }
+    });
+}
 
-        slider.style.transform = `translateX(-${slideWidth * (currentIndex + 1)}px)`;
+function initializeSkills() {
+    const habilidades = document.querySelectorAll(".Imagem-habilidade");
+    const frameworksContainer = document.getElementById('frameworks-container');
+    
+    if (!frameworksContainer) {
+        const container = document.createElement('div');
+        container.id = 'frameworks-container';
+        container.className = 'frameworks-container';
+        document.querySelector('.skills-section').appendChild(container);
     }
 
-    document.querySelector('.prev').addEventListener('click', () => moveSlide(-1));
-    document.querySelector('.next').addEventListener('click', () => moveSlide(1));
-
-    // Auto slide
-    setInterval(() => moveSlide(1), 5000); // Adjust the interval as needed
-
-    // Inicialização das habilidades
-    const habilidades = document.querySelectorAll(".Imagem-habilidade");
     habilidades.forEach(habilidade => {
         const img = habilidade.querySelector('img');
         const text = habilidade.querySelector('.texto-habilidade');
-        img.style.display = "block";
-        text.style.display = "none";
+        if (img && text) {
+            img.style.display = "block";
+            text.style.display = "none";
+        }
     });
-});
+}
 
 function toggleText(element, skill) {
+    if (!element) return;
+    
     const img = element.querySelector('img');
     const text = element.querySelector('.texto-habilidade');
     const frameworksContainer = document.getElementById('frameworks-container');
+    
+    if (!img || !text || !frameworksContainer) return;
 
-    if (img.style.display === "none") {
-        img.style.display = "block";
-        text.style.display = "none";
-        removeBlur();
-        frameworksContainer.innerHTML = '';  // Limpa os frameworks exibidos
-    } else {
+    const isHidden = img.style.display === "none";
+    
+    // Reset all elements first
+    document.querySelectorAll('.Imagem-habilidade').forEach(el => {
+        const elImg = el.querySelector('img');
+        const elText = el.querySelector('.texto-habilidade');
+        if (elImg && elText) {
+            elImg.style.display = "block";
+            elText.style.display = "none";
+        }
+        el.classList.remove('active');
+    });
+
+    if (!isHidden) {
         img.style.display = "none";
         text.style.display = "flex";
+        element.classList.add('active');
         applyBlur(element);
         showFramework(skill);
+    } else {
+        removeBlur();
+        frameworksContainer.innerHTML = '';
     }
 }
 
@@ -101,68 +118,74 @@ function showFramework(skill) {
     const frameworks = {
         'CSS': [
             { src: 'img/Bootstrap.svg', text: 'Usei minhas habilidades em Bootstrap para criar layouts responsivos e consistentes rapidamente.' },
-            { src:'img/Tailwindcss.svg', text: 'Uso meus conhecimentos em tailwindcss para a personalização e embelezamento do projeto.'}
+            { src: 'img/Tailwindcss.svg', text: 'Uso meus conhecimentos em Tailwind CSS para personalização e estilização eficiente de projetos.' },
+            { src: 'img/Semantic.svg', text: 'Aplico princípios de HTML semântico para melhor acessibilidade e SEO.' },
+            { src: 'img/Sass.svg', text: 'Utilizo Sass para criar estilos mais organizados e manuteníveis.' }
         ],
         'JavaScript': [
-            { src: 'img/React.png', text: 'Usei minhas habilidades em React para construir interfaces de usuário dinâmicas e componentes reutilizáveis.' },
-            { src: 'img/JWT.svg', text:'Uso minhas habilidades em JWT para garantir a segurança e não vazamento de dados sigilosos.'}   ,      
-            { src: 'img/Vite.svg', text:' Uso meus conhecimentos em vite para o teste de minhas aplicações web.'}
-        ], 
-        'Python': [
-            { src: 'img/Django.svg', text: 'Usei minhas habilidades em Django para desenvolver backends robustos e eficientes.' },
-            { src:'img/DjangoSQL.svg', text:'Uso minha habilidades em DjangoSQl para desenvolver banco de dados eficientes e faceis de se ler e acessar.'}
+            { src: 'img/React.png', text: 'Desenvolvo interfaces dinâmicas e componentes reutilizáveis com React.' },
+            { src: 'img/JWT.svg', text: 'Implemento autenticação segura usando JWT.' },
+            { src: 'img/Vite.svg', text: 'Utilizo Vite para desenvolvimento rápido e eficiente.' },
+            { src: 'img/Node.svg', text: 'Desenvolvo aplicações backend com Node.js.' },
+            { src: 'img/TypeScript.svg', text: 'Uso TypeScript para código mais seguro e manutenível.' },
+            { src: 'img/WebComponents.svg', text: 'Crio componentes web reutilizáveis e encapsulados.' }
         ],
-        '+':[
-            {src:'img/SQL.svg', text:'Usei minhas habilidades em SQL para criar bancos de dados interativos e faceis para se interagir com as aplicações'},
-            {src:'img/DevOps.png', text:'Uso meus conhecimentos em DevOps como o Git e o Docker para facilitar desenvolvimento e controle de versão do codigo e o docker para facilitação ao deploy'}
+        'Python': [
+            { src: 'img/Django.svg', text: 'Desenvolvo backends robustos com Django.' },
+            { src: 'img/Flask.svg', text: 'Crio APIs leves e flexíveis com Flask.' },
+            { src: 'img/DjangoSQL.svg', text: 'Trabalho com bancos de dados usando Django ORM.' }
+        ],
+        'DevOps': [
+            { src: 'img/Git.svg', text: 'Controle de versão e colaboração com Git.' },
+            { src: 'img/GitFlow.svg', text: 'Gerenciamento de branches com GitFlow.' },
+            { src: 'img/Docker.svg', text: 'Containerização de aplicações com Docker.' },
+            { src: 'img/Kubernetes.svg', text: 'Orquestração de containers com Kubernetes.' },
+            { src: 'img/Terraform.svg', text: 'Infraestrutura como código com Terraform.' },
+            { src: 'img/Monitoring.svg', text: 'Monitoramento de aplicações e infraestrutura.' }
+        ],
+        'Soft Skills': [
+            { src: 'img/ProblemSolving.svg', text: 'Resolução eficiente de problemas complexos.' },
+            { src: 'img/Teamwork.svg', text: 'Colaboração efetiva em equipes multidisciplinares.' },
+            { src: 'img/Kanban.svg', text: 'Gestão de projetos ágeis com Kanban.' }
+        ],
+        'Database': [
+            { src: 'img/SQL.svg', text: 'Desenvolvimento e otimização de bancos de dados relacionais.' },
+            { src: 'img/MySQL.svg', text: 'Experiência com MySQL para aplicações escaláveis.' },
+            { src: 'img/PostgreSQL.svg', text: 'Trabalho com PostgreSQL para sistemas robustos.' },
+            { src: 'img/SQLite.svg', text: 'Utilização de SQLite para aplicações locais e protótipos.' }
         ]
     };
 
     const frameworksContainer = document.getElementById('frameworks-container');
-    frameworksContainer.innerHTML = '';  // Limpa os frameworks exibidos
+    if (!frameworksContainer) return;
 
-    frameworks[skill].forEach(framework => {
-        const frameworkElement = document.createElement('div');
-        frameworkElement.className = 'Imagem-habilidade-extra';
-        frameworkElement.innerHTML = `
-            <img src="${framework.src}" alt="Framework ${skill}">
-            <p class="texto-habilidade-extra">${framework.text}</p>
-        `;
-        frameworkElement.onclick = () => toggleExtraText(frameworkElement);
-        frameworksContainer.appendChild(frameworkElement);
-    });
+    frameworksContainer.innerHTML = '';
+    frameworksContainer.classList.remove('show');
+
+    if (frameworks[skill]) {
+        const gridContainer = document.createElement('div');
+        gridContainer.className = 'frameworks-grid';
+        
+        frameworks[skill].forEach(framework => {
+            const frameworkElement = document.createElement('div');
+            frameworkElement.className = 'Imagem-habilidade-extra';
+            frameworkElement.innerHTML = `
+                <img src="${framework.src}" alt="Framework ${skill}">
+                <p class="texto-habilidade-extra">${framework.text}</p>
+            `;
+            frameworkElement.onclick = () => toggleExtraText(frameworkElement);
+            gridContainer.appendChild(frameworkElement);
+        });
+
+        frameworksContainer.appendChild(gridContainer);
+
+        setTimeout(() => {
+            frameworksContainer.classList.add('show');
+        }, 50);
+    }
 }
 
 function toggleExtraText(element) {
     const text = element.querySelector('.texto-habilidade-extra');
     text.style.display = text.style.display === "none" ? "flex" : "none";
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-    const habilidades = document.querySelectorAll(".Imagem-habilidade");
-
-    habilidades.forEach(habilidade => {
-        const img = habilidade.querySelector('img');
-        const text = habilidade.querySelector('.texto-habilidade');
-
-        img.style.display = "block";
-        text.style.display = "none";
-    });
-
-    const habilidadesExtras = document.querySelectorAll(".Imagem-habilidade-extra");
-
-    habilidadesExtras.forEach(habilidadeExtra => {
-        const text = habilidadeExtra.querySelector('.texto-habilidade-extra');
-        text.style.display = "none";
-    });
-});
-document.querySelectorAll('.Imagem-habilidade-extra').forEach(item => {
-    item.addEventListener('click', () => {
-        const text = item.querySelector('.texto-habilidade-extra');
-        if (text.style.display === 'flex') {
-            text.style.display = 'none';
-        } else {
-            text.style.display = 'flex';
-        }
-    });
-});
