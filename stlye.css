@@ -627,7 +627,19 @@ div.texto-sobre {
 .skills-section {
     padding: 40px 20px;
     position: relative;
-    z-index: 2;
+    z-index: 0;
+}
+
+.caixas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 20px;
+    justify-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .frameworks-container {
@@ -639,8 +651,7 @@ div.texto-sobre {
     transform: translateY(20px);
     transition: all 0.3s ease;
     position: relative;
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.8);
+    z-index: 0;
 }
 
 .frameworks-container.show {
@@ -1047,18 +1058,22 @@ p {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(0, 255, 170, 0.1);
+    transform-origin: center;
 }
 
-/* Remova o blur dos slides não ativos */
+/* Ajuste para slides não ativos */
 .swiper-slide:not(.swiper-slide-active) {
     opacity: 0.3;
     transform: scale(0.75) translateX(0);
+    pointer-events: none;
 }
 
+/* Ajuste para slide ativo */
 .swiper-slide-active {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) !important;
     z-index: 2;
+    pointer-events: auto;
 }
 
 .slide-image {
@@ -1278,48 +1293,4 @@ p {
         margin-top: 10px;
         padding-top: 10px;
     }
-}
-
-/* Ajustes para as habilidades extras */
-.Imagem-habilidade-extra {
-    width: 180px;
-    height: 180px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 15px;
-    position: relative;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.texto-habilidade-extra {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 14px;
-    line-height: 1.4;
-    z-index: 3;
-}
-
-/* Ajuste para garantir que o blur não afete outros elementos */
-.blur {
-    filter: blur(3px);
-    opacity: 0.5;
-    transition: all 0.3s ease;
-}
-
-/* Garanta que elementos ativos não recebam blur */
-.Imagem-habilidade.active {
-    filter: none !important;
-    opacity: 1 !important;
 }

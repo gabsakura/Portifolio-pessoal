@@ -126,10 +126,10 @@ function removeBlur() {
 function showFramework(skill) {
     const frameworks = {
         'CSS': [
-            { src: 'img/Bootstrap.svg', text: 'Usei minhas habilidades em Bootstrap para criar layouts responsivos e consistentes rapidamente.' },
-            { src: 'img/Tailwindcss.svg', text: 'Uso meus conhecimentos em Tailwind CSS para personalização e estilização eficiente de projetos.' },
-            { src: 'img/Semantic.svg', text: 'Aplico princípios de HTML semântico para melhor acessibilidade e SEO.' },
-            { src: 'img/Sass.svg', text: 'Utilizo Sass para criar estilos mais organizados e manuteníveis.' }
+            { src: './img/Bootstrap.svg', text: 'Usei minhas habilidades em Bootstrap para criar layouts responsivos e consistentes rapidamente.' },
+            { src: './img/Tailwindcss.svg', text: 'Uso meus conhecimentos em Tailwind CSS para personalização e estilização eficiente de projetos.' },
+            { src: './img/Semantic.svg', text: 'Aplico princípios de HTML semântico para melhor acessibilidade e SEO.' },
+            { src: './img/Sass.svg', text: 'Utilizo Sass para criar estilos mais organizados e manuteníveis.' }
         ],
         'JavaScript': [
             { src: './img/React.png', text: 'Desenvolvo interfaces dinâmicas e componentes reutilizáveis com React.' },
@@ -166,10 +166,7 @@ function showFramework(skill) {
     };
 
     const frameworksContainer = document.getElementById('frameworks-container');
-    if (!frameworksContainer) {
-        console.error('Container de frameworks não encontrado');
-        return;
-    }
+    if (!frameworksContainer) return;
 
     frameworksContainer.innerHTML = '';
     frameworksContainer.classList.remove('show');
@@ -190,10 +187,10 @@ function showFramework(skill) {
         });
 
         frameworksContainer.appendChild(gridContainer);
-        
-        // Força um reflow antes de adicionar a classe show
-        frameworksContainer.offsetHeight;
-        frameworksContainer.classList.add('show');
+
+        setTimeout(() => {
+            frameworksContainer.classList.add('show');
+        }, 50);
     }
 }
 
