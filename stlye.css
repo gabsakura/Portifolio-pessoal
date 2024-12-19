@@ -625,7 +625,9 @@ div.texto-sobre {
 
 /* Ajustes na seção de habilidades */
 .skills-section {
-    padding: 50px 20px;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 0;
 }
 
 .caixas {
@@ -633,9 +635,36 @@ div.texto-sobre {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 40px;
     padding: 20px;
     justify-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.frameworks-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 0;
+}
+
+.frameworks-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.frameworks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
 }
 
 .Imagem-habilidade {
@@ -1014,6 +1043,8 @@ p {
     padding: 50px;
     overflow: visible;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .swiper-slide {
@@ -1027,30 +1058,22 @@ p {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(0, 255, 170, 0.1);
+    transform-origin: center;
 }
 
-/* Estilo para slides não ativos */
+/* Ajuste para slides não ativos */
 .swiper-slide:not(.swiper-slide-active) {
     opacity: 0.3;
     transform: scale(0.75) translateX(0);
-    filter: blur(2px);
+    pointer-events: none;
 }
 
-/* Estilo para slide ativo */
+/* Ajuste para slide ativo */
 .swiper-slide-active {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) !important;
     z-index: 2;
-    filter: blur(0);
-}
-
-/* Estilo para slides adjacentes */
-.swiper-slide-prev {
-    transform: scale(0.75) translateX(25%);
-}
-
-.swiper-slide-next {
-    transform: scale(0.75) translateX(-25%);
+    pointer-events: auto;
 }
 
 .slide-image {

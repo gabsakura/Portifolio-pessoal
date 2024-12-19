@@ -85,7 +85,7 @@
         <!-- Skills Section -->
         <section id="skills" class="skills-section">
             <div class="section-content">
-                <div class="caixas">
+                <div class="caixas" data-skills-container>
                     <div class="Imagem-habilidade" onclick="toggleText(this, 'CSS')">
                         <img src="img/Css-icon.png" alt="CSS">
                         <div class="texto-habilidade"></div>
@@ -115,6 +115,9 @@
                         <div class="texto-habilidade"></div>
                     </div>
                 </div>
+                <div id="frameworks-container" class="frameworks-container">
+                    <!-- frameworks serão inseridos aqui via JavaScript -->
+                </div>
             </div>
         </section>
         
@@ -122,7 +125,7 @@
         <section id="projects" class="projects-section">
             <div class="section-content parallax" data-speed="0.2">
                 <h2>Meus Projetos</h2>
-                <div class="swiper">
+                <div class="swiper" data-swiper="main">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a href="https://gabsakura.github.io/Portifolio-pessoal/" target="_blank" rel="noopener noreferrer" class="projeto-link">
@@ -268,4 +271,3 @@
     </script>
 </body>
 </html>
-0

@@ -10,6 +10,8 @@ function initializeSwiper() {
         slidesPerView: 'auto',
         centeredSlides: true,
         effect: 'coverflow',
+        observer: true,
+        observeParents: true,
         coverflowEffect: {
             rotate: 0,
             stretch: -50,
@@ -38,6 +40,13 @@ function initializeSwiper() {
             640: {
                 slidesPerView: 'auto',
                 spaceBetween: 60
+            }
+        },
+        on: {
+            init: function () {
+                setTimeout(() => {
+                    this.update();
+                }, 500);
             }
         }
     });
@@ -117,18 +126,18 @@ function removeBlur() {
 function showFramework(skill) {
     const frameworks = {
         'CSS': [
-            { src: 'img/Bootstrap.svg', text: 'Usei minhas habilidades em Bootstrap para criar layouts responsivos e consistentes rapidamente.' },
-            { src: 'img/Tailwindcss.svg', text: 'Uso meus conhecimentos em Tailwind CSS para personalização e estilização eficiente de projetos.' },
-            { src: 'img/Semantic.svg', text: 'Aplico princípios de HTML semântico para melhor acessibilidade e SEO.' },
-            { src: 'img/Sass.svg', text: 'Utilizo Sass para criar estilos mais organizados e manuteníveis.' }
+            { src: './img/Bootstrap.svg', text: 'Usei minhas habilidades em Bootstrap para criar layouts responsivos e consistentes rapidamente.' },
+            { src: './img/Tailwindcss.svg', text: 'Uso meus conhecimentos em Tailwind CSS para personalização e estilização eficiente de projetos.' },
+            { src: './img/Semantic.svg', text: 'Aplico princípios de HTML semântico para melhor acessibilidade e SEO.' },
+            { src: './img/Sass.svg', text: 'Utilizo Sass para criar estilos mais organizados e manuteníveis.' }
         ],
         'JavaScript': [
-            { src: 'img/React.png', text: 'Desenvolvo interfaces dinâmicas e componentes reutilizáveis com React.' },
-            { src: 'img/JWT.svg', text: 'Implemento autenticação segura usando JWT.' },
-            { src: 'img/Vite.svg', text: 'Utilizo Vite para desenvolvimento rápido e eficiente.' },
-            { src: 'img/Node.svg', text: 'Desenvolvo aplicações backend com Node.js.' },
-            { src: 'img/TypeScript.svg', text: 'Uso TypeScript para código mais seguro e manutenível.' },
-            { src: 'img/WebComponents.svg', text: 'Crio componentes web reutilizáveis e encapsulados.' }
+            { src: './img/React.png', text: 'Desenvolvo interfaces dinâmicas e componentes reutilizáveis com React.' },
+            { src: './img/JWT.svg', text: 'Implemento autenticação segura usando JWT.' },
+            { src: './img/Vite.svg', text: 'Utilizo Vite para desenvolvimento rápido e eficiente.' },
+            { src: './img/Node.svg', text: 'Desenvolvo aplicações backend com Node.js.' },
+            { src: './img/TypeScript.svg', text: 'Uso TypeScript para código mais seguro e manutenível.' },
+            { src: './img/WebComponents.svg', text: 'Crio componentes web reutilizáveis e encapsulados.' }
         ],
         'Python': [
             { src: 'img/Django.svg', text: 'Desenvolvo backends robustos com Django.' },
