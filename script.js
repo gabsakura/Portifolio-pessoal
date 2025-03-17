@@ -96,12 +96,15 @@ function toggleText(element, skill) {
     });
 
     if (!isHidden) {
+        // Mostrando detalhes
         img.style.display = "none";
         text.style.display = "flex";
+        text.textContent = "Clique novamente para voltar";
         element.classList.add('active');
         applyBlur(element);
         showFramework(skill);
     } else {
+        // Voltando ao estado inicial
         removeBlur();
         frameworksContainer.innerHTML = '';
     }
@@ -128,16 +131,15 @@ function showFramework(skill) {
         'CSS': [
             { src: 'img/Bootstrap.svg', text: 'Usei minhas habilidades em Bootstrap para criar layouts responsivos e consistentes rapidamente.' },
             { src: 'img/Tailwindcss.svg', text: 'Uso meus conhecimentos em Tailwind CSS para personalização e estilização eficiente de projetos.' },
-            { src: 'img/Semantic.svg', text: 'Aplico princípios de HTML semântico para melhor acessibilidade e SEO.' },
-            { src: 'img/Sass.svg', text: 'Utilizo Sass para criar estilos mais organizados e manuteníveis.' }
+            { src: 'img/Semantic.jpg', text: 'Aplico princípios de HTML semântico para melhor acessibilidade e SEO.' },
+            { src: 'img/Sass.jpg', text: 'Utilizo Sass para criar estilos mais organizados e manuteníveis.' }
         ],
         'JavaScript': [
             { src: './img/React.png', text: 'Desenvolvo interfaces dinâmicas e componentes reutilizáveis com React.' },
             { src: './img/JWT.svg', text: 'Implemento autenticação segura usando JWT.' },
             { src: './img/Vite.svg', text: 'Utilizo Vite para desenvolvimento rápido e eficiente.' },
-            { src: './img/Node.svg', text: 'Desenvolvo aplicações backend com Node.js.' },
-            { src: './img/TypeScript.svg', text: 'Uso TypeScript para código mais seguro e manutenível.' },
-            { src: './img/WebComponents.svg', text: 'Crio componentes web reutilizáveis e encapsulados.' }
+            { src: './img/Node.jpg', text: 'Desenvolvo aplicações backend com Node.js.' },
+            { src: './img/webcomponent.png', text: 'Crio componentes web reutilizáveis e encapsulados.' }
         ],
         'Python': [
             { src: 'img/Django.svg', text: 'Desenvolvo backends robustos com Django.' },
@@ -145,23 +147,23 @@ function showFramework(skill) {
             { src: 'img/DjangoSQL.svg', text: 'Trabalho com bancos de dados usando Django ORM.' }
         ],
         'DevOps': [
-            { src: 'img/Git.svg', text: 'Controle de versão e colaboração com Git.' },
-            { src: 'img/GitFlow.svg', text: 'Gerenciamento de branches com GitFlow.' },
-            { src: 'img/Docker.svg', text: 'Containerização de aplicações com Docker.' },
-            { src: 'img/Kubernetes.svg', text: 'Orquestração de containers com Kubernetes.' },
-            { src: 'img/Terraform.svg', text: 'Infraestrutura como código com Terraform.' },
-            { src: 'img/Monitoring.svg', text: 'Monitoramento de aplicações e infraestrutura.' }
+            { src: 'img/git.png', text: 'Controle de versão e colaboração com Git.' },
+            { src: 'img/gitFlow.png', text: 'Gerenciamento de branches com GitFlow.' },
+            { src: 'img/docker.svg', text: 'Containerização de aplicações com Docker.' },
+            { src: 'img/kubernet.png', text: 'Orquestração de containers com Kubernetes.' },
+            { src: 'img/Terraform.jpg', text: 'Infraestrutura como código com Terraform.' },
+            { src: 'img/monitoring.jpeg', text: 'Monitoramento de aplicações e infraestrutura.' }
         ],
         'Soft Skills': [
-            { src: 'img/ProblemSolving.svg', text: 'Resolução eficiente de problemas complexos.' },
-            { src: 'img/Teamwork.svg', text: 'Colaboração efetiva em equipes multidisciplinares.' },
-            { src: 'img/Kanban.svg', text: 'Gestão de projetos ágeis com Kanban.' }
+            { src: 'img/problem.jpg', text: 'Resolução eficiente de problemas complexos.' },
+            { src: 'img/teamwork.jpg', text: 'Colaboração efetiva em equipes multidisciplinares.' },
+            { src: 'img/kanban.jpg', text: 'Gestão de projetos ágeis com Kanban.' }
         ],
         'Database': [
             { src: 'img/SQL.svg', text: 'Desenvolvimento e otimização de bancos de dados relacionais.' },
-            { src: 'img/MySQL.svg', text: 'Experiência com MySQL para aplicações escaláveis.' },
-            { src: 'img/PostgreSQL.svg', text: 'Trabalho com PostgreSQL para sistemas robustos.' },
-            { src: 'img/SQLite.svg', text: 'Utilização de SQLite para aplicações locais e protótipos.' }
+            { src: 'img/mysql.png', text: 'Experiência com MySQL para aplicações escaláveis.' },
+            { src: 'img/postgree.png', text: 'Trabalho com PostgreSQL para sistemas robustos.' },
+            { src: 'img/sqlite.svg', text: 'Utilização de SQLite para aplicações locais e protótipos.' }
         ]
     };
 

@@ -1262,7 +1262,7 @@ p {
     font-size: 1.2em;
 }
 
-/* Ajuste na descri��ão para acomodar os links */
+/* Ajuste na descrição para acomodar os links */
 .descrição-slide {
     padding: 25px;
 }
@@ -1322,4 +1322,37 @@ p {
 .Imagem-habilidade.active {
     filter: none !important;
     opacity: 1 !important;
+}
+
+.skills-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: rgb(0, 255, 170);
+    font-size: 2em;
+}
+
+.skills-instruction {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+    font-size: 1.1em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+/* Adicione isso para melhorar o feedback visual ao clicar */
+.Imagem-habilidade {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.Imagem-habilidade:hover {
+    transform: scale(1.05);
+}
+
+.Imagem-habilidade.active {
+    border: 2px solid #007bff;
+    border-radius: 8px;
 }

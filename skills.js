@@ -1,26 +1,4 @@
-const skills = {
-    'CSS': {
-        title: 'CSS',
-        subSkills: [
-            { name: 'Bootstrap', icon: 'img/Bootstrap.svg', description: 'Framework CSS para desenvolvimento web responsivo' },
-            { name: 'Tailwind', icon: 'img/Tailwindcss.svg', description: 'Framework CSS utilitário para design moderno' }
-        ]
-    },
-    'JavaScript': {
-        title: 'JavaScript',
-        subSkills: [
-            { name: 'React', icon: 'img/React.png', description: 'Desenvolvimento de interfaces modernas com React' },
-            { name: 'JWT', icon: 'img/JWT.svg', description: 'Segurança e autenticação em aplicações web' }
-        ]
-    },
-    'Python': {
-        title: 'Python',
-        subSkills: [
-            { name: 'Django', icon: 'img/Django.svg', description: 'Framework web Python de alto nível' },
-            { name: 'DjangoSQL', icon: 'img/DjangoSQL.svg', description: 'Banco de dados eficiente com Django' }
-        ]
-    }
-};
+
 
 function toggleText(element, skillType) {
     const skillsSection = document.querySelector('.skills-section');
