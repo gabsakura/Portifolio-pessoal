@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Outfit', sans-serif; 
+    font-family: 'Outfit', sans-serif;
 }
-body, html {
+
+body,
+html {
     background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(20, 2, 48));
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -174,7 +177,7 @@ html {
     .hero-section {
         grid-template-columns: 1fr;
     }
-    
+
     .apresentação-grande {
         text-align: center;
     }
@@ -297,11 +300,12 @@ div.texto-sobre {
 .caixas-extras {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding-top: 50px ;
+    padding-top: 50px;
     gap: 50px;
 }
 
-.Imagem-habilidade,.Imagem-habilidade-extra {
+.Imagem-habilidade,
+.Imagem-habilidade-extra {
     position: relative;
     cursor: pointer;
     width: 200px;
@@ -310,18 +314,21 @@ div.texto-sobre {
     transition: transform 0.3s ease;
 }
 
-.Imagem-habilidade img,.Imagem-habilidade-extra img {
+.Imagem-habilidade img,
+.Imagem-habilidade-extra img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.Imagem-habilidade:hover,.Imagem-habilidade-extra:hover {
+.Imagem-habilidade:hover,
+.Imagem-habilidade-extra:hover {
     box-shadow: 0 0 10px 5px purple;
 }
 
-.texto-habilidade,.texto-habilidade-extra {
+.texto-habilidade,
+.texto-habilidade-extra {
     position: absolute;
     top: 0;
     left: 0;
@@ -416,7 +423,8 @@ div.texto-sobre {
 }
 
 /* Botões de navegação */
-.prev, .next {
+.prev,
+.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -435,7 +443,8 @@ div.texto-sobre {
     z-index: 2;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
     background: rgba(0, 255, 170, 0.4);
 }
 
@@ -452,7 +461,8 @@ div.texto-sobre {
         height: 200px;
     }
 
-    .prev, .next {
+    .prev,
+    .next {
         width: 35px;
         height: 35px;
         font-size: 1em;
@@ -553,7 +563,7 @@ div.texto-sobre {
     }
 
     .hero-section {
-        grid-template-areas: 
+        grid-template-areas:
             "nome"
             "especialidade"
             "imagem"
@@ -868,7 +878,9 @@ div.texto-sobre {
     }
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     margin-bottom: 30px;
 }
 
@@ -1355,4 +1367,68 @@ p {
 .Imagem-habilidade.active {
     border: 2px solid #007bff;
     border-radius: 8px;
+}
+
+.btn-curriculo {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: linear-gradient(90deg, rgb(0, 255, 170), rgb(20, 2, 48));
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0, 255, 170, 0.15);
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.btn-curriculo:hover {
+    background: linear-gradient(90deg, rgb(20, 2, 48), rgb(0, 255, 170));
+    color: #141414;
+    transform: scale(1.05);
+}
+
+.Imagem-habilidade .texto-habilidade {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.0);
+    /* Remove tarja preta */
+    color: #00ffaa;
+    font-size: 1.2em;
+    font-weight: bold;
+    z-index: 2;
+    pointer-events: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.Imagem-habilidade:hover .texto-habilidade,
+.Imagem-habilidade:focus .texto-habilidade {
+    display: flex;
+}
+
+.Imagem-habilidade img {
+    transition: opacity 0.2s;
+}
+
+.Imagem-habilidade.active .texto-habilidade {
+    display: flex;
+}
+
+.frameworks-container:empty {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    background: none !important;
 }

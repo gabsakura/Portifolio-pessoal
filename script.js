@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeSwiper();
     initializeSkills();
 });
@@ -55,7 +55,7 @@ function initializeSwiper() {
 function initializeSkills() {
     const habilidades = document.querySelectorAll(".Imagem-habilidade");
     const frameworksContainer = document.getElementById('frameworks-container');
-    
+
     if (!frameworksContainer) {
         const container = document.createElement('div');
         container.id = 'frameworks-container';
@@ -69,21 +69,35 @@ function initializeSkills() {
         if (img && text) {
             img.style.display = "block";
             text.style.display = "none";
+            // Adiciona o nome da habilidade no atributo data-skill
+            if (!habilidade.dataset.skill) {
+                habilidade.dataset.skill = img.alt;
+            }
+            // Mostra o nome ao hover
+            habilidade.onmouseenter = function () {
+                text.textContent = habilidade.dataset.skill;
+                text.style.display = "flex";
+                img.style.opacity = "0.3";
+            };
+            habilidade.onmouseleave = function () {
+                text.style.display = "none";
+                img.style.opacity = "1";
+            };
         }
     });
 }
 
 function toggleText(element, skill) {
     if (!element) return;
-    
+
     const img = element.querySelector('img');
     const text = element.querySelector('.texto-habilidade');
     const frameworksContainer = document.getElementById('frameworks-container');
-    
+
     if (!img || !text || !frameworksContainer) return;
 
     const isHidden = img.style.display === "none";
-    
+
     // Reset all elements first
     document.querySelectorAll('.Imagem-habilidade').forEach(el => {
         const elImg = el.querySelector('img');
@@ -164,6 +178,9 @@ function showFramework(skill) {
             { src: 'img/mysql.png', text: 'Experiência com MySQL para aplicações escaláveis.' },
             { src: 'img/postgree.png', text: 'Trabalho com PostgreSQL para sistemas robustos.' },
             { src: 'img/sqlite.svg', text: 'Utilização de SQLite para aplicações locais e protótipos.' }
+        ],
+        'Flutter': [
+            { src: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg', text: 'Estou aprendendo Flutter para desenvolvimento mobile cross-platform.' }
         ]
     };
 
@@ -179,7 +196,7 @@ function showFramework(skill) {
     if (frameworks[skill]) {
         const gridContainer = document.createElement('div');
         gridContainer.className = 'frameworks-grid';
-        
+
         frameworks[skill].forEach(framework => {
             const frameworkElement = document.createElement('div');
             frameworkElement.className = 'Imagem-habilidade-extra';
@@ -192,7 +209,7 @@ function showFramework(skill) {
         });
 
         frameworksContainer.appendChild(gridContainer);
-        
+
         // Força um reflow antes de adicionar a classe show
         frameworksContainer.offsetHeight;
         frameworksContainer.classList.add('show');
