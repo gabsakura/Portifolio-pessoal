@@ -1432,3 +1432,121 @@ p {
     border: none !important;
     background: none !important;
 }
+
+/* ==========================================================================
+   Seção Laboratório (Categorias Múltiplas)
+   ========================================================================== */
+/* Espaçamento e Títulos das Categorias do Laboratório */
+.laboratorio-section {
+    width: 100%;
+    padding: 80px 0;
+}
+
+.lab-category {
+    width: 100%;
+    margin: 0 auto 50px auto;
+}
+
+.category-title {
+    color: white;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-left: 5px solid rgb(0, 255, 170);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.category-title i {
+    color: rgb(0, 255, 170);
+}
+
+.swiper-data, .swiper-ai {
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px 0 60px 0; /* Espaço para a paginação */
+    margin: 0 auto;
+    overflow: visible;
+}
+
+/* Centralizando os pontinhos de navegação independentes */
+.swiper-pagination-data, .swiper-pagination-ai {
+    bottom: 0 !important;
+}
+
+/* Estilo unificado para os Mini Cards */
+.mini-card {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 255, 170, 0.15);
+    border-radius: 15px;
+    padding: 25px;
+    height: auto;
+    width: 320px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: all 0.3s ease;
+    opacity: 1; 
+    transform: scale(1);
+}
+
+.mini-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 255, 170, 0.5);
+    box-shadow: 0 10px 20px rgba(0, 255, 170, 0.1);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.mini-card h4 {
+    color: rgb(0, 255, 170);
+    font-size: 1.3em;
+    margin: 0;
+}
+
+.mini-card p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.mini-card-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.github-link-small {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.85em;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.github-link-small.app-btn {
+    background: rgba(0, 255, 170, 0.15);
+    color: rgb(0, 255, 170);
+    border-color: rgba(0, 255, 170, 0.3);
+}
+
+.github-link-small:hover {
+    background: rgba(0, 255, 170, 0.2);
+    color: rgb(0, 255, 170);
+    border-color: rgba(0, 255, 170, 0.5);
+}
+
+.swiper-pagination-data, .swiper-pagination-ai {
+    bottom: 0px !important;
+}

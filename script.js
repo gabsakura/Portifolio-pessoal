@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     initializeSwiper();
+    initializeLabSwipers(); 
     initializeSkills();
 });
 
@@ -219,4 +220,52 @@ function showFramework(skill) {
 function toggleExtraText(element) {
     const text = element.querySelector('.texto-habilidade-extra');
     text.style.display = text.style.display === "none" ? "flex" : "none";
+}
+
+
+
+function initializeLabSwipers() {
+    // Exatamente a mesma configuração do seu carrossel principal
+    const swiperOptions = {
+        loop: true,
+        speed: 800,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        effect: 'coverflow',
+        observer: true,
+        observeParents: true,
+        coverflowEffect: {
+            rotate: 0,
+            stretch: -50,
+            depth: 100,
+            modifier: 2,
+            slideShadows: false,
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            },
+            640: {
+                slidesPerView: 'auto',
+                spaceBetween: 60
+            }
+        }
+    };
+
+    // Inicializa os dois novos carrosséis com a mesma lógica
+    new Swiper('.swiper-data', {
+        ...swiperOptions,
+        pagination: { el: '.swiper-pagination-data', clickable: true }
+    });
+
+    new Swiper('.swiper-ai', {
+        ...swiperOptions,
+        pagination: { el: '.swiper-pagination-ai', clickable: true }
+    });
 }
