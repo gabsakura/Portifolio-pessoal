@@ -1,440 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Sakura - Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="stlye.css">
-    <link rel="stylesheet" href="slider.css">
-    <script src="https://kit.fontawesome.com/981a566169.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Gabriel Sakura, estudante de Engenharia de Software com projetos em desenvolvimento web, dados e aplicações mobile.">
+  <title>Gabriel Sakura | Portfólio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="stlye.css">
 </head>
-
 <body>
-    <div class="main-container">
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <div class="left-content">
-                    <div class="apresentação-grande">
-                        <h1>Gabriel Sakura</h1>
-                        <h3>Full-Stack Developer</h3>
-                        <a href="Curriculo - Gabriel Sakura.pdf" download class="btn-curriculo">Baixar Currículo em
-                            PDF</a>
-                    </div>
-                </div>
-                <div class="right-content">
-                    <div class="circle">
-                        <img src="img/imagem eu.jpg" alt="Gabriel Sakura">
-                    </div>
-                    <div class="imagens-redes">
-                        <a href="https://github.com/gabsakura" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/gabrielsakura/" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                        <a href="https://www.instagram.com/sakuragabriel/" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-        <!-- About Section -->
-        <section id="about" class="about-section">
-            <div class="section-content parallax" data-speed="0.2">
-                <div class="sobre-mim">
-                    <h1>Sobre mim</h1>
-                    <div class="texto-sobre">
-                        <div class="sobre-section">
-                            <i class="bi bi-person-circle"></i>
-                            <div class="sobre-content">
-                                <h3>Quem sou eu</h3>
-                                <p>Olá! Sou Gabriel Sakura, um desenvolvedor back-end apaixonado por construir soluções
-                                    inovadoras. Estou sempre ansioso para aprender e continuar mergulhando em novas
-                                    tecnologias e metodologias que ajudarão a desenvolver minhas habilidades de
-                                    construção.</p>
-                            </div>
-                        </div>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Ir para o início">GS<span>.</span></a>
+    <nav aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="header-link" href="Curriculo - Gabriel Sakura.pdf" download>
+      Currículo <i class="bi bi-download" aria-hidden="true"></i>
+    </a>
+  </header>
 
-                        <div class="sobre-section">
-                            <i class="bi bi-code-square"></i>
-                            <div class="sobre-content">
-                                <h3>Experiência Profissional</h3>
-                                <p>Full stack, especializado em desenvolvimento back-end com excelentes habilidades para
-                                    criar APIs sólidas e sistemas escaláveis. Sou eficiente em desenvolver soluções que
-                                    trazem resultados reais para o usuário.</p>
-                            </div>
-                        </div>
-
-                        <div class="sobre-section">
-                            <i class="bi bi-trophy"></i>
-                            <div class="sobre-content">
-                                <h3>Vida Esportiva</h3>
-                                <p>Faço muitas atividades por ser uma pessoa ativa: treinos na academia, jogo vôlei e
-                                    sou competitivo em e-sports. Sou muito competitivo jogando Valorant e aplico
-                                    exatamente as mesmas habilidades que uso no trabalho em estratégia e trabalho em
-                                    equipe no desenvolvimento.</p>
-                            </div>
-                        </div>
-
-                        <div class="sobre-section">
-                            <i class="bi bi-heart"></i>
-                            <div class="sobre-content">
-                                <h3>Interesses Pessoais</h3>
-                                <p>Além do desenvolvimento, sou interessado em gastronomia e um colecionador dedicado.
-                                    Amo criatividade na cozinha e as novas experiências de sabor que vêm com ela.
-                                    Coleciono cartas Pokémon e amo canetas bonitas. Adoro detalhes e ordem, tanto na
-                                    minha vida pessoal quanto na de desenvolvedor.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="skills-section">
-            <div class="section-content">
-                <h2>Minhas Habilidades</h2>
-                <p class="skills-instruction">Clique em cada ícone para ver mais detalhes sobre minhas habilidades e
-                    experiências com diferentes tecnologias.</p>
-                <div class="caixas" data-skills-container>
-                    <div class="Imagem-habilidade" onclick="toggleText(this, 'CSS')">
-                        <img src="img/Css-icon.png" alt="CSS">
-                        <div class="texto-habilidade"></div>
-                    </div>
-                    <div class="Imagem-habilidade" onclick="toggleText(this, 'HTML')">
-                        <img src="img/HTML.png" alt="HTML">
-                        <div class="texto-habilidade"></div>
-                    </div>
-                    <div class="Imagem-habilidade" onclick="toggleText(this, 'JavaScript')">
-                        <img src="img/JS.png" alt="JavaScript">
-                        <div class="texto-habilidade"></div>
-                    </div>
-                    <div class="Imagem-habilidade" onclick="toggleText(this, 'Python')">
-                        <img src="img/Python.png" alt="Python">
-                        <div class="texto-habilidade"></div>
-                    </div>
-                    <div class="Imagem-habilidade" onclick="toggleText(this, 'Database')">
-                        <img src="img/SQL.svg" alt="Database">
-                        <div class="texto-habilidade"></div>
-                    </div>
-                    <div class="Imagem-habilidade" onclick="toggleText(this, 'DevOps')">
-                        <img src="img/devops.png" alt="DevOps">
-                        <div class="texto-habilidade"></div>
-                    </div>
-                    <div class="Imagem-habilidade" onclick="toggleText(this, 'Soft Skills')">
-                        <img src="img/+.svg" alt="Soft Skills">
-                        <div class="texto-habilidade"></div>
-                    </div>
-                    <div class="Imagem-habilidade" onclick="toggleText(this, 'Flutter')">
-                        <img src="img\flutter.png" alt="Flutter">
-                        <div class="texto-habilidade"></div>
-                    </div>
-                </div>
-                <div id="frameworks-container" class="frameworks-container">
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="projects-section">
-            <div class="section-content parallax" data-speed="0.2">
-                <h2>Meus Projetos</h2>
-                <h3>Clique em cada card para ver mais detalhes sobre os projetos</h3>
-                <div class="swiper" data-swiper="main">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                                rel="noopener noreferrer" class="projeto-link">
-                                <img class="slide-image" src="img\DEV.png" alt="Portfolio">
-                                <div class="descrição-slide">
-                                    <h3>Projeto Portfolio</h3>
-                                    <p>Site pessoal desenvolvido com HTML, CSS e JavaScript puro, focando em performance
-                                        e experiência do usuário.</p>
-                                    <div class="projeto-tags">
-                                        <span class="tag">HTML</span>
-                                        <span class="tag">CSS</span>
-                                        <span class="tag">JavaScript</span>
-                                    </div>
-                                    <div class="projeto-links">
-                                        <a href="https://github.com/gabsakura/Portifolio-pessoal" target="_blank"
-                                            rel="noopener noreferrer" class="github-link">
-                                            <i class="bi bi-github"></i>
-                                            <span>Ver código</span>
-                                        </a>
-                                        <a href="https://gabsakura.github.io/Portifolio-pessoal/" target="_blank">
-                                            <span>App</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                                <img class="slide-image" src="img\Failguard.png" alt="Sistema de Gestão de Sensores">
-                                <div class="descrição-slide">
-                                    <h3>Sistema de Gestão de Sensores</h3>
-                                    <p>Aplicação web para gerenciamento de recursos e processos industriais com uso de
-                                        chatbot.</p>
-                                    <div class="projeto-tags">
-                                        <span class="tag">Python</span>
-                                        <span class="tag">Flask</span>
-                                        <span class="tag">IA</span>
-                                        <span class="tag">JavaScript</span>
-                                    </div>
-                                    <div class="projeto-links">
-                                        <a href="https://github.com/gabsakura/IA-challenge-update_test-main"
-                                            target="_blank" rel="noopener noreferrer" class="github-link">
-                                            <i class="bi bi-github"></i>
-                                            <span>Ver código</span>
-                                        </a>
-                                        <a href="https://ia-challenge-update-test-main-1.onrender.com" target="_blank">
-                                            <span>App</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                                <img class="slide-image" src="./img/fotoprof.png" alt="API REST">
-                                <div class="descrição-slide">
-                                    <h3>Sistema para gestão de dados</h3>
-                                    <p>Um sistema Full-Stack para analise e decision-making empresarial.</p>
-                                    <div class="projeto-tags">
-                                        <span class="tag">Node.js</span>
-                                        <span class="tag">React.js</span>
-                                        <span class="tag">Postgree</span>
-                                    </div>
-                                    <div class="projeto-links">
-                                        <a href="https://github.com/gabsakura/Projeto_siteProfissional.git"
-                                            target="_blank" rel="noopener noreferrer" class="github-link">
-                                            <i class="bi bi-github"></i>
-                                            <span>Ver código</span>
-                                        </a>
-                                        <a href="" target="_blank">
-                                            <span>Ainda em produção</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                                <img class="slide-image" src="img/passa_a_bola.png" alt="E-commerce" >
-                                <div class="descrição-slide">
-                                    <h3>Aplicativo de rede para olheiros + incrição de torneios</h3>
-                                    <p>Plataforma completa para mostrar dados de jogadoras, alem de uma plataforma para criação de times e campeonatos, junto de uma divulgação de locais de jogos de futebol feminino</p>
-                                    <div class="projeto-tags">
-                                        <span class="tag">Dart</span>
-                                        <span class="tag">Firebase</span>
-                                        <span class="tag">Flutter</span>
-                                    </div>
-                                    <div class="projeto-links">
-                                        <a href="https://github.com/gabsakura/passabola" target="_blank"
-                                            rel="noopener noreferrer" class="github-link">
-                                            <i class="bi bi-github"></i>
-                                            <span>Ver código</span>
-                                        </a>
-                                        <a href="https://flutter-app-f547b.web.app/" target="_blank">
-                                            <span>App</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="slide-image" src="./img/projeto em andamento.jfif" alt="Dashboard">
-                            <div class="descrição-slide">
-                                <h3>Analise de reunião auditiva com Inteligência Artificial</h3>
-                                <p>Painel de analise de dados de reuniões feitas com IA para melhorar os sucessos das reuniões.</p>
-                                <div class="projeto-tags">
-                                    <span class="tag">Python</span>
-                                    <span class="tag">Postgree</span>
-                                    <span class="tag">Firebase</span>
-                                </div>
-                                <div class="projeto-links">
-                                    <a href="https://github.com/seu-usuario/dashboard" target="_blank"
-                                        rel="noopener noreferrer" class="github-link">
-                                        <i class="bi bi-github"></i>
-                                        <span>Ver código</span>
-                                    </a>
-                                    <a href="" target="_blank">
-                                        <span>Ainda em produção</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <section id="laboratorio" class="projects-section" style="background: rgba(0, 0, 0, 0.2);">
-        <div class="section-content parallax" data-speed="0.2">
-            <h2>Laboratório & Práticas</h2>
-            <p class="skills-instruction">Explorações práticas divididas por áreas de especialidade.</p>
-
-            <h3 style="color: rgb(0, 255, 170); text-align: center; margin-top: 40px; font-size: 1.8em;">
-                <i class="bi bi-bar-chart-fill"></i> Análise de Dados
-            </h3>
-            
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    
-                    <!-- Card 1: Construção -->
-                    <div class="swiper-slide">
-                        <img class="slide-image" src="img\Dashbaord_construçãoCIvil.png" alt="Construção">
-                        <div class="descrição-slide">
-                            <h3>Análise de Construção</h3>
-                            <p>Análise exploratória focada em orçamentos e insumos para o setor de construção civil.</p>
-                            <div class="projeto-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">Streamlit</span>
-                            </div>
-                            <div class="projeto-links">
-                                <a href="https://github.com/gabsakura/Streamlit--data" target="_blank" rel="noopener noreferrer" class="github-link" style="margin-right: 10px;">
-                                    <i class="bi bi-github"></i>
-                                    <span>Código</span>
-                                </a>
-                                <a href="https://gabsakura-streamlit--data-main-rujwev.streamlit.app/" target="_blank" rel="noopener noreferrer" class="github-link" style="background: rgba(0, 255, 170, 0.2);">
-                                    <i class="bi bi-box-arrow-up-right"></i>
-                                    <span>App</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <!-- Card 2: Faculdades -->
-                    <div class="swiper-slide">
-                        <img class="slide-image" src="img\Imagem_streamlitMED.png" alt="Ensino Superior">
-                        <div class="descrição-slide">
-                            <h3>Ensino Superior e Saúde</h3>
-                            <p>Análise detalhada sobre faculdades brasileiras e cruzamento com indicadores médicos.</p>
-                            <div class="projeto-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">Streamlit</span>
-                            </div>
-                            <div class="projeto-links">
-                                <a href="https://github.com/gabsakura/CheckPoint---Dados.git" target="_blank" rel="noopener noreferrer" class="github-link" style="margin-right: 10px;">
-                                    <i class="bi bi-github"></i>
-                                    <span>Código</span>
-                                </a>
-                                <a href="https://gabsakura-analise-dados-faculdades-brasileiras-main-66aqvl.streamlit.app/" target="_blank" rel="noopener noreferrer" class="github-link" style="background: rgba(0, 255, 170, 0.2);">
-                                    <i class="bi bi-box-arrow-up-right"></i>
-                                    <span>App</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-    
-                </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-            <h3 style="color: rgb(0, 255, 170); text-align: center; margin-top: 80px; font-size: 1.8em;">
-                <i class="bi bi-robot"></i> Pequenos projetos de estudo
-            </h3>
-            
-            <section id="laboratorio" class="projects-section" style="background: rgba(0, 0, 0, 0.2);">
-                <div class="section-content parallax" data-speed="0.2">
-                    <h2>Laboratório & Práticas</h2>
-                    <p class="skills-instruction">Alguns pequenos projetos que fiz para estudar alguns temas de programação.</p>
-        
-                    <h3 style="color: rgb(0, 255, 170); text-align: center; margin-top: 40px; font-size: 1.8em;">
-                        <i class="bi bi-bar-chart-fill"></i> Análise de Dados
-                    </h3>
-                    
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img\Dashbaord_construçãoCIvil.png" alt="Construção">
-                                <div class="descrição-slide">
-                                    <h3>Projeto de inclusão digital para orçamentos</h3>
-                                    <p>Projeto feito para aprendizado da technologia de voz.</p>
-                                    <div class="projeto-tags">
-                                        <span class="tag">Python</span>
-                                        <span class="tag">Streamlit</span>
-                                    </div>
-                                    <div class="projeto-links">
-                                        <a href="https://github.com/gabsakura/Sistema-de-Orcamentos-Online-com-Acessibilidade-por-Voz" target="_blank" rel="noopener noreferrer" class="github-link" style="margin-right: 10px;">
-                                            <i class="bi bi-github"></i>
-                                            <span>Código</span>
-                                        </a>
-                                        <a href="https://sistema-de-orcamentos-online-com-ac.vercel.app" target="_blank" rel="noopener noreferrer" class="github-link" style="background: rgba(0, 255, 170, 0.2);">
-                                            <i class="bi bi-box-arrow-up-right"></i>
-                                            <span>App</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="slide-image" src="img\Imagem_streamlitMED.png" alt="Ensino Superior">
-                                <div class="descrição-slide">
-                                    <h3>Triagem de risco</h3>
-                                    <p>Projeto em python com uso de grafos para criação de um caminho viavel mais rapido para diversos casos.</p>
-                                    <div class="projeto-tags">
-                                        <span class="tag">Python</span>
-                                        <span class="tag">Streamlit</span>
-                                    </div>
-                                    <div class="projeto-links">
-                                        <a href="https://github.com/gabsakura/CheckPoint---Dados.git" target="_blank" rel="noopener noreferrer" class="github-link" style="margin-right: 10px;">
-                                            <i class="bi bi-github"></i>
-                                            <span>Código</span>
-                                        </a>
-                                        <a href="https://gabsakura-analise-dados-faculdades-brasileiras-main-66aqvl.streamlit.app/" target="_blank" rel="noopener noreferrer" class="github-link" style="background: rgba(0, 255, 170, 0.2);">
-                                            <i class="bi bi-box-arrow-up-right"></i>
-                                            <span>App</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-            
-                        </div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
+  <main id="conteudo">
+    <section id="inicio" class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Estudante de Engenharia de Software</p>
+        <h1>Construo soluções digitais com <em>dados, código e propósito.</em></h1>
+        <p class="hero-text">Sou Gabriel Sakura, estudante da FIAP. Desenvolvo projetos web e mobile com foco em interfaces úteis, dados bem estruturados e resolução de problemas reais.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projetos">Conhecer projetos <i class="bi bi-arrow-down-right" aria-hidden="true"></i></a>
+          <a class="button button-secondary" href="https://www.linkedin.com/in/gabrielsakura/" target="_blank" rel="noopener noreferrer">LinkedIn <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+        <ul class="hero-facts" aria-label="Áreas de atuação">
+          <li><strong>Web</strong><span>React, JavaScript e APIs</span></li>
+          <li><strong>Dados</strong><span>Python, SQL e dashboards</span></li>
+          <li><strong>Mobile</strong><span>Flutter e Firebase</span></li>
+        </ul>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="profile-frame">
+          <img src="img/imagem eu.jpg" alt="Gabriel Sakura">
+        </div>
+        <div class="availability-card"><span class="status-dot"></span> Aberto a oportunidades de estágio</div>
+        <a class="github-pill" href="https://github.com/gabsakura" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> github.com/gabsakura</a>
+      </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script>
-        // Configuração base do ScrollReveal
-        ScrollReveal({
-            reset: true,
-            distance: '50px',
-            duration: 1000,
-            delay: 200
-        });
 
-        // Revelar seções específicas
-        ScrollReveal().reveal('.hero-section', { origin: 'left' });
-        ScrollReveal().reveal('.sobre-section', { origin: 'bottom' });
-        ScrollReveal().reveal('.skills-section', { origin: 'right' });
-        ScrollReveal().reveal('.projects-section', { origin: 'bottom' });
+    <section id="sobre" class="section-shell about-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">01 — Sobre mim</p>
+        <h2>Aprendo construindo.</h2>
+      </div>
+      <div class="about-grid">
+        <p class="about-lead reveal">Tenho interesse em transformar necessidades em produtos claros, funcionais e sustentáveis. Em projetos acadêmicos, já atuei com aplicações web, bancos de dados, dashboards, automação e desenvolvimento mobile.</p>
+        <div class="about-notes reveal">
+          <article>
+            <i class="bi bi-code-slash" aria-hidden="true"></i>
+            <h3>Desenvolvimento</h3>
+            <p>Experiência prática com Python, JavaScript, React, SQL e Flutter em projetos de ponta a ponta.</p>
+          </article>
+          <article>
+            <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+            <h3>Dados e decisão</h3>
+            <p>Gosto de organizar dados e transformá-los em dashboards, relatórios e informações acionáveis.</p>
+          </article>
+          <article>
+            <i class="bi bi-people" aria-hidden="true"></i>
+            <h3>Colaboração</h3>
+            <p>Trabalho com Git, Scrum e Kanban, valorizando comunicação clara e entregas incrementais.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        // Revelar elementos dentro das seções
-        ScrollReveal().reveal('.Imagem-habilidade', {
-            origin: 'bottom',
-            interval: 200
-        });
-        ScrollReveal().reveal('.conteudo-slide', {
-            origin: 'right',
-            interval: 300
-        });
-        ScrollReveal().reveal('.sobre-content', {
-            origin: 'left',
-            interval: 200
-        });
-    </script>
+    <section id="habilidades" class="section-shell skills-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">02 — Habilidades</p>
+        <h2>Tecnologias que uso para tirar ideias do papel.</h2>
+        <p>Selecione uma área para ver como ela aparece nos meus projetos.</p>
+      </div>
+      <div class="skill-tabs reveal" role="tablist" aria-label="Áreas de habilidade">
+        <button class="skill-tab is-active" role="tab" aria-selected="true" aria-controls="skill-panel" data-skill="Web"><i class="bi bi-window"></i> Web</button>
+        <button class="skill-tab" role="tab" aria-selected="false" aria-controls="skill-panel" data-skill="Dados"><i class="bi bi-database"></i> Dados</button>
+        <button class="skill-tab" role="tab" aria-selected="false" aria-controls="skill-panel" data-skill="Backend"><i class="bi bi-braces"></i> Backend</button>
+        <button class="skill-tab" role="tab" aria-selected="false" aria-controls="skill-panel" data-skill="Mobile"><i class="bi bi-phone"></i> Mobile</button>
+        <button class="skill-tab" role="tab" aria-selected="false" aria-controls="skill-panel" data-skill="Práticas"><i class="bi bi-git"></i> Práticas</button>
+      </div>
+      <div id="skill-panel" class="skill-panel reveal" role="tabpanel" tabindex="0"></div>
+    </section>
+
+    <section id="projetos" class="section-shell projects-section">
+      <div class="section-heading reveal section-heading-row">
+        <div><p class="eyebrow">03 — Projetos em destaque</p><h2>Projetos que contam melhor o que sei fazer.</h2></div>
+        <a class="text-link" href="https://github.com/gabsakura?tab=repositories" target="_blank" rel="noopener noreferrer">Ver todos no GitHub <i class="bi bi-arrow-up-right"></i></a>
+      </div>
+      <div class="project-grid">
+        <article class="project-card project-card-featured reveal">
+          <img src="img/Failguard.png" alt="Tela do projeto FailGuard">
+          <div class="project-card-content">
+            <p class="project-number">01 / FailGuard</p>
+            <h3>Monitoramento inteligente de sensores</h3>
+            <p>Aplicação para visualizar temperatura, corrente e vibração de máquinas, com dashboard, relatórios e suporte de IA para análise das leituras.</p>
+            <ul class="tags"><li>Python</li><li>Flask</li><li>SQLite</li><li>Gemini</li></ul>
+            <a class="card-link" href="https://github.com/gabsakura/FAILGUARD" target="_blank" rel="noopener noreferrer">Ver repositório <i class="bi bi-arrow-up-right"></i></a>
+          </div>
+        </article>
+        <article class="project-card reveal">
+          <img src="img/fotoprof.png" alt="Tela do dashboard financeiro">
+          <div class="project-card-content">
+            <p class="project-number">02 / Dashboard</p>
+            <h3>Gestão financeira e inventário</h3>
+            <p>Interface para acompanhar indicadores financeiros, inventário, usuários e tarefas em um quadro Kanban.</p>
+            <ul class="tags"><li>React</li><li>Vite</li><li>Material UI</li><li>Axios</li></ul>
+            <a class="card-link" href="https://github.com/gabsakura/Projeto_siteProfissional" target="_blank" rel="noopener noreferrer">Ver repositório <i class="bi bi-arrow-up-right"></i></a>
+          </div>
+        </article>
+        <article class="project-card reveal">
+          <img src="img/passa_a_bola.png" alt="Tela do aplicativo Passa a Bola">
+          <div class="project-card-content">
+            <p class="project-number">03 / Passa a Bola</p>
+            <h3>Ecossistema para o futebol feminino</h3>
+            <p>Aplicativo multiplataforma para conectar atletas, clubes e torcedores, com perfis, campeonatos e persistência em nuvem.</p>
+            <ul class="tags"><li>Flutter</li><li>Dart</li><li>Firebase</li><li>Firestore</li></ul>
+            <a class="card-link" href="https://github.com/gabsakura/passabola-App" target="_blank" rel="noopener noreferrer">Ver repositório <i class="bi bi-arrow-up-right"></i></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell lab-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">04 — Laboratório</p>
+        <h2>Explorações e estudos aplicados.</h2>
+        <p>Projetos menores em que experimento dados, acessibilidade e soluções com IA.</p>
+      </div>
+      <div class="lab-grid">
+        <article class="lab-card reveal"><img src="img/Dashbaord_construçãoCIvil.png" alt="Dashboard de construção civil"><div><h3>Análise de construção civil</h3><p>Exploração de dados voltada a orçamentos e insumos.</p><a href="https://github.com/gabsakura/Streamlit--data" target="_blank" rel="noopener noreferrer">Código <i class="bi bi-arrow-up-right"></i></a></div></article>
+        <article class="lab-card reveal"><img src="img/Imagem_streamlitMED.png" alt="Dashboard sobre ensino superior e saúde"><div><h3>Ensino superior e saúde</h3><p>Análise de indicadores brasileiros com Python e Streamlit.</p><a href="https://github.com/gabsakura/CheckPoint---Dados" target="_blank" rel="noopener noreferrer">Código <i class="bi bi-arrow-up-right"></i></a></div></article>
+        <article class="lab-card reveal"><img src="img/Forms.png" alt="Projeto de orçamento acessível"><div><h3>Orçamentos com acessibilidade por voz</h3><p>Experimento de inclusão digital com interação por voz.</p><a href="https://github.com/gabsakura/Sistema-de-Orcamentos-Online-com-Acessibilidade-por-Voz" target="_blank" rel="noopener noreferrer">Código <i class="bi bi-arrow-up-right"></i></a></div></article>
+      </div>
+    </section>
+
+    <section id="contato" class="contact-section">
+      <div class="section-shell contact-content reveal">
+        <p class="eyebrow">05 — Contato</p>
+        <h2>Vamos conversar sobre a próxima oportunidade.</h2>
+        <p>Estou buscando uma oportunidade de estágio para evoluir com um time, contribuir em projetos reais e seguir construindo uma base técnica sólida.</p>
+        <div class="contact-links">
+          <a class="button button-primary" href="mailto:gabsakura1@gmail.com">Enviar e-mail <i class="bi bi-envelope"></i></a>
+          <a class="button button-secondary" href="https://www.linkedin.com/in/gabrielsakura/" target="_blank" rel="noopener noreferrer">Conectar no LinkedIn <i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>Desenvolvido por Gabriel Sakura.</p><a href="#inicio">Voltar ao topo <i class="bi bi-arrow-up"></i></a></footer>
+  <script src="script.js"></script>
 </body>
-
 </html>
