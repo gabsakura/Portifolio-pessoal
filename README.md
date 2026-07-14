@@ -31,6 +31,23 @@ Este é meu portfólio pessoal, desenvolvido para apresentar minhas habilidades,
 - **Habilidades**: Tecnologias e ferramentas que domino
 - **Projetos**: Showcase dos principais trabalhos
 
+## Estrutura
+
+```text
+index.html  # Conteúdo e seções do portfólio
+stlye.css   # Estilos principais
+slider.css  # Estilos dos carrosséis
+script.js   # Interações da página
+img/        # Imagens e ícones
+```
+
 ## 💻 Como Executar
 
 1. Clone o repositório:
+2. Baixe o plugin do Live Preview 
+3. Aperte com o botão direito no "index.html" e clique em "Open in Browser"
+
+## Contato
+
+- [GitHub](https://github.com/gabsakura)
+- [LinkedIn](https://www.linkedin.com/in/gabrielsakura/)
