@@ -108,7 +108,11 @@
             <h3>Monitoramento inteligente de sensores</h3>
             <p>Aplicação para visualizar temperatura, corrente e vibração de máquinas, com dashboard, relatórios e suporte de IA para análise das leituras.</p>
             <ul class="tags"><li>Python</li><li>Flask</li><li>SQLite</li><li>Gemini</li></ul>
-            <a class="card-link" href="https://github.com/gabsakura/FAILGUARD" target="_blank" rel="noopener noreferrer">Ver repositório <i class="bi bi-arrow-up-right"></i></a>
+            <div class="project-actions">
+              <button class="details-button" type="button" data-project="failguard">Ver detalhes <i class="bi bi-plus-lg"></i></button>
+              <a class="card-link" href="https://ia-challenge-update-test-main-1.onrender.com" target="_blank" rel="noopener noreferrer">Acessar projeto <i class="bi bi-box-arrow-up-right"></i></a>
+              <a class="card-link" href="https://github.com/gabsakura/FAILGUARD" target="_blank" rel="noopener noreferrer">Código <i class="bi bi-github"></i></a>
+            </div>
           </div>
         </article>
         <article class="project-card reveal">
@@ -118,7 +122,10 @@
             <h3>Gestão financeira e inventário</h3>
             <p>Interface para acompanhar indicadores financeiros, inventário, usuários e tarefas em um quadro Kanban.</p>
             <ul class="tags"><li>React</li><li>Vite</li><li>Material UI</li><li>Axios</li></ul>
-            <a class="card-link" href="https://github.com/gabsakura/Projeto_siteProfissional" target="_blank" rel="noopener noreferrer">Ver repositório <i class="bi bi-arrow-up-right"></i></a>
+            <div class="project-actions">
+              <button class="details-button" type="button" data-project="dashboard">Ver detalhes <i class="bi bi-plus-lg"></i></button>
+              <a class="card-link" href="https://github.com/gabsakura/Projeto_siteProfissional" target="_blank" rel="noopener noreferrer">Código <i class="bi bi-github"></i></a>
+            </div>
           </div>
         </article>
         <article class="project-card reveal">
@@ -128,7 +135,11 @@
             <h3>Ecossistema para o futebol feminino</h3>
             <p>Aplicativo multiplataforma para conectar atletas, clubes e torcedores, com perfis, campeonatos e persistência em nuvem.</p>
             <ul class="tags"><li>Flutter</li><li>Dart</li><li>Firebase</li><li>Firestore</li></ul>
-            <a class="card-link" href="https://github.com/gabsakura/passabola-App" target="_blank" rel="noopener noreferrer">Ver repositório <i class="bi bi-arrow-up-right"></i></a>
+            <div class="project-actions">
+              <button class="details-button" type="button" data-project="passabola">Ver detalhes <i class="bi bi-plus-lg"></i></button>
+              <a class="card-link" href="https://flutter-app-f547b.web.app/" target="_blank" rel="noopener noreferrer">Acessar projeto <i class="bi bi-box-arrow-up-right"></i></a>
+              <a class="card-link" href="https://github.com/gabsakura/passabola-App" target="_blank" rel="noopener noreferrer">Código <i class="bi bi-github"></i></a>
+            </div>
           </div>
         </article>
       </div>
@@ -159,6 +170,14 @@
       </div>
     </section>
   </main>
+
+  <dialog class="project-modal" aria-labelledby="modal-title">
+    <div class="modal-header">
+      <p class="eyebrow" id="modal-label">Projeto</p>
+      <button class="modal-close" type="button" aria-label="Fechar detalhes do projeto"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="modal-content" id="modal-content"></div>
+  </dialog>
 
   <footer><p>Desenvolvido por Gabriel Sakura.</p><a href="#inicio">Voltar ao topo <i class="bi bi-arrow-up"></i></a></footer>
   <script src="script.js"></script>

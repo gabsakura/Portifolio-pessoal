@@ -617,6 +617,32 @@ h3 {
   align-self: start;
 }
 
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.details-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  border: 0;
+  color: var(--text);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 800;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.details-button:hover {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
 /* Laboratory */
 
 .lab-grid {
@@ -687,6 +713,107 @@ h3 {
 
 .contact-links {
   justify-content: center;
+}
+
+/* Project modal */
+
+.project-modal {
+  width: min(680px, calc(100% - 2rem));
+  max-height: min(720px, calc(100% - 2rem));
+  padding: 0;
+  overflow: auto;
+  border: 1px solid rgba(140, 255, 224, 0.42);
+  border-radius: var(--radius-large);
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(167, 139, 250, 0.2), transparent 18rem),
+    linear-gradient(145deg, #1c2c54, #10182e 72%);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.55);
+}
+
+.project-modal::backdrop {
+  background: rgba(3, 6, 15, 0.74);
+  backdrop-filter: blur(7px);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.7rem 0;
+}
+
+.modal-header .eyebrow {
+  margin: 0;
+}
+
+.modal-close {
+  display: grid;
+  width: 2.4rem;
+  height: 2.4rem;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.modal-close:hover {
+  background: rgba(140, 255, 224, 0.15);
+  transform: rotate(90deg);
+}
+
+.modal-content {
+  padding: 1rem 1.7rem 1.8rem;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+}
+
+.modal-content h3 {
+  margin: 1.7rem 0 0.75rem;
+  font-size: 1rem;
+}
+
+.modal-description {
+  color: var(--muted);
+}
+
+.modal-highlights {
+  display: grid;
+  gap: 0.65rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.modal-highlights li {
+  position: relative;
+  padding-left: 1.4rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.modal-highlights li::before {
+  position: absolute;
+  top: 0.6rem;
+  left: 0;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--violet));
+  content: "";
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
 }
 
 footer {
@@ -846,6 +973,14 @@ footer a {
 
   .project-card-content {
     padding: 1.25rem;
+  }
+
+  .modal-header {
+    padding: 1.2rem 1.2rem 0;
+  }
+
+  .modal-content {
+    padding: 1rem 1.2rem 1.4rem;
   }
 
   .lab-card {

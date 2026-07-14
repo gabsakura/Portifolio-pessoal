@@ -26,6 +26,47 @@ const skills = {
   }
 };
 
+const projects = {
+  failguard: {
+    label: '01 / FailGuard',
+    title: 'Monitoramento inteligente de sensores',
+    description: 'Projeto voltado ao acompanhamento de máquinas industriais por meio de leituras de temperatura, corrente e vibração. A aplicação transforma os dados em gráficos e relatórios para facilitar a identificação de comportamentos fora do esperado.',
+    highlights: [
+      'Dashboard com filtros por período para analisar as leituras.',
+      'Autenticação de usuários e área administrativa.',
+      'Integração com Gemini para consultas e interpretação dos dados.',
+      'Persistência local com SQLite e suporte a PostgreSQL em produção.'
+    ],
+    repository: 'https://github.com/gabsakura/FAILGUARD',
+    demo: 'https://ia-challenge-update-test-main-1.onrender.com'
+  },
+  dashboard: {
+    label: '02 / Dashboard financeiro',
+    title: 'Gestão financeira e inventário',
+    description: 'Interface em React para reunir indicadores financeiros, inventário, usuários e tarefas em um único ambiente. O projeto consome uma API configurada por variável de ambiente.',
+    highlights: [
+      'Visualização de dados financeiros com gráficos e indicadores.',
+      'Fluxos para inventário, perfis de usuário e quadro Kanban.',
+      'Rotas protegidas e autenticação por token.',
+      'Componentes reutilizáveis com React e Material UI.'
+    ],
+    repository: 'https://github.com/gabsakura/Projeto_siteProfissional'
+  },
+  passabola: {
+    label: '03 / Passa a Bola',
+    title: 'Ecossistema para o futebol feminino',
+    description: 'Aplicativo multiplataforma criado para aproximar atletas, clubes e torcedores. A proposta é centralizar informações, perfis, competições e recursos de gestão ligados ao futebol feminino.',
+    highlights: [
+      'Autenticação e persistência de dados com Firebase.',
+      'Perfis de usuários, clubes e atletas.',
+      'Estrutura para campeonatos, partidas e dados do ecossistema esportivo.',
+      'Regras e índices do Firestore versionados no repositório.'
+    ],
+    repository: 'https://github.com/gabsakura/passabola-App',
+    demo: 'https://flutter-app-f547b.web.app/'
+  }
+};
+
 function renderSkill(name) {
   const panel = document.querySelector('#skill-panel');
   const skill = skills[name];
@@ -73,6 +114,51 @@ function addClickFeedback() {
 }
 
 addClickFeedback();
+
+function initializeProjectModal() {
+  const modal = document.querySelector('.project-modal');
+  const content = document.querySelector('#modal-content');
+  const closeButton = document.querySelector('.modal-close');
+
+  if (!modal || !content || !closeButton) {
+    return;
+  }
+
+  document.querySelectorAll('[data-project]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const project = projects[button.dataset.project];
+
+      if (!project) {
+        return;
+      }
+
+      content.innerHTML = `
+        <h2 id="modal-title">${project.title}</h2>
+        <p class="modal-description">${project.description}</p>
+        <h3>O que o projeto demonstra</h3>
+        <ul class="modal-highlights">
+          ${project.highlights.map((item) => `<li>${item}</li>`).join('')}
+        </ul>
+        <div class="modal-actions">
+          ${project.demo ? `<a class="button button-primary" href="${project.demo}" target="_blank" rel="noopener noreferrer">Acessar projeto <i class="bi bi-box-arrow-up-right"></i></a>` : ''}
+          <a class="button button-secondary" href="${project.repository}" target="_blank" rel="noopener noreferrer">Ver código <i class="bi bi-github"></i></a>
+        </div>`;
+
+      document.querySelector('#modal-label').textContent = project.label;
+      modal.showModal();
+    });
+  });
+
+  closeButton.addEventListener('click', () => modal.close());
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.close();
+    }
+  });
+}
+
+initializeProjectModal();
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
