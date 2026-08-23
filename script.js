@@ -41,7 +41,7 @@ const projects = {
     demo: 'https://estudo-de-mercardo.vercel.app/'
   },
   failguard: {
-    label: '02 / FailGuard',
+    label: '01 / FailGuard',
     title: 'Monitoramento inteligente de sensores',
     description: 'Projeto voltado ao acompanhamento de máquinas industriais por meio de leituras de temperatura, corrente e vibração. A aplicação transforma os dados em gráficos e relatórios para facilitar a identificação de comportamentos fora do esperado.',
     highlights: [
@@ -54,7 +54,7 @@ const projects = {
     demo: 'https://ia-challenge-update-test-main-1.onrender.com'
   },
   dashboard: {
-    label: '03 / Dashboard financeiro',
+    label: '02 / Dashboard financeiro',
     title: 'Gestão financeira e inventário',
     description: 'Interface em React para reunir indicadores financeiros, inventário, usuários e tarefas em um único ambiente. O projeto consome uma API configurada por variável de ambiente.',
     highlights: [
@@ -66,7 +66,7 @@ const projects = {
     repository: 'https://github.com/gabsakura/Projeto_siteProfissional'
   },
   passabola: {
-    label: '04 / Passa a Bola',
+    label: '03 / Passa a Bola',
     title: 'Ecossistema para o futebol feminino',
     description: 'Aplicativo multiplataforma criado para aproximar atletas, clubes e torcedores. A proposta é centralizar informações, perfis, competições e recursos de gestão ligados ao futebol feminino.',
     highlights: [
