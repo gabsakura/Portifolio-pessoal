@@ -27,6 +27,19 @@ const skills = {
 };
 
 const projects = {
+  meetmind: {
+    label: '01 / MeetMind',
+    title: 'Inteligência de Customer Success baseada em evidências',
+    description: 'Plataforma auditável que transforma transcrições de reuniões em evidências literais, planos e ações sem atribuir ao cliente informações que ele não forneceu.',
+    highlights: [
+      'Ingestão, normalização e deduplicação de transcrições de reuniões.',
+      'Análise estruturada por IA com citações literais e incerteza explícita.',
+      'Trilha auditável entre evidência, plano, ação, encaminhamento e follow-up.',
+      'Arquitetura com Flask, PostgreSQL, Redis e workers assíncronos, além de controle de acesso e isolamento por organização.'
+    ],
+    repository: 'https://github.com/gabsakura/meetmind',
+    demo: 'https://meetmind-portfolio.onrender.com/inteligencia-artificial'
+  },
   mercadodados: {
     label: '01 / Mercado de Dados',
     title: 'Radar do mercado de dados no Brasil',
@@ -41,7 +54,7 @@ const projects = {
     demo: 'https://estudo-de-mercardo.vercel.app/'
   },
   failguard: {
-    label: '01 / FailGuard',
+    label: '02 / FailGuard',
     title: 'Monitoramento inteligente de sensores',
     description: 'Projeto voltado ao acompanhamento de máquinas industriais por meio de leituras de temperatura, corrente e vibração. A aplicação transforma os dados em gráficos e relatórios para facilitar a identificação de comportamentos fora do esperado.',
     highlights: [
@@ -54,7 +67,7 @@ const projects = {
     demo: 'https://ia-challenge-update-test-main-1.onrender.com'
   },
   dashboard: {
-    label: '02 / Dashboard financeiro',
+    label: '03 / Dashboard financeiro',
     title: 'Gestão financeira e inventário',
     description: 'Interface em React para reunir indicadores financeiros, inventário, usuários e tarefas em um único ambiente. O projeto consome uma API configurada por variável de ambiente.',
     highlights: [
@@ -66,7 +79,7 @@ const projects = {
     repository: 'https://github.com/gabsakura/Projeto_siteProfissional'
   },
   passabola: {
-    label: '03 / Passa a Bola',
+    label: '04 / Passa a Bola',
     title: 'Ecossistema para o futebol feminino',
     description: 'Aplicativo multiplataforma criado para aproximar atletas, clubes e torcedores. A proposta é centralizar informações, perfis, competições e recursos de gestão ligados ao futebol feminino.',
     highlights: [
